@@ -64,6 +64,9 @@ public class Master extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btn_pelanggan = new javax.swing.JButton();
+        btn_kota = new javax.swing.JButton();
+        btn_costestimate = new javax.swing.JButton();
+        btn_agen = new javax.swing.JButton();
         panel_pelanggan = new javax.swing.JPanel();
         et_kodepelanggan = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -110,17 +113,53 @@ public class Master extends javax.swing.JFrame {
             }
         });
 
+        btn_kota.setText("Kota");
+        btn_kota.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_kota.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_kotaMouseClicked(evt);
+            }
+        });
+
+        btn_costestimate.setText("Cost Estimate");
+        btn_costestimate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_costestimate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_costestimateMouseClicked(evt);
+            }
+        });
+
+        btn_agen.setText("Drop Off Agen");
+        btn_agen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_agen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_agenMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_pelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_pelanggan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_kota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel1))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btn_costestimate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,9 +167,15 @@ public class Master extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(11, 11, 11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_pelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_kota, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_costestimate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
@@ -584,6 +629,18 @@ public class Master extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbLakiStateChanged
 
+    private void btn_kotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kotaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_kotaMouseClicked
+
+    private void btn_costestimateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_costestimateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_costestimateMouseClicked
+
+    private void btn_agenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_agenMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_agenMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -714,6 +771,9 @@ public class Master extends javax.swing.JFrame {
     private javax.swing.JButton btSimpanPelanggan;
     private javax.swing.JButton btUbahPelanggan;
     private javax.swing.JButton btnClearpelanggan;
+    private javax.swing.JButton btn_agen;
+    private javax.swing.JButton btn_costestimate;
+    private javax.swing.JButton btn_kota;
     private javax.swing.JButton btn_pelanggan;
     private javax.swing.JTextArea et_alamat;
     private javax.swing.JTextField et_caripelanggan;

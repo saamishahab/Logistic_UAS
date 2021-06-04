@@ -5,6 +5,7 @@
  */
 package Settings;
 
+import Master.Login;
 import Master.Master;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,10 +35,8 @@ public class MainSystemSetting {
         if(con != null)
         {
             JOptionPane.showMessageDialog(null, "Connection Success", "System", JOptionPane.DEFAULT_OPTION);
-            Master plg = new Master();
-//            plg.getConnection();
-            plg.getDataCustomer();
-            plg.setVisible(true);
+            Login lg = new Login();
+            lg.setVisible(true);
         }else
         {
             JOptionPane.showMessageDialog(null, "Connection Failed", "System", JOptionPane.DEFAULT_OPTION);
