@@ -26,18 +26,20 @@ public class MainSystemSetting {
     public static PreparedStatement ps;
     public static Connection con;
     public static Statement stm;
-    
+   
     
     public static void main(String[] args) {
         // TODO code application logic here
         
         connection();
+        
         if(con != null)
         {
             JOptionPane.showMessageDialog(null, "Connection Success", "System", JOptionPane.DEFAULT_OPTION);
             Login lg = new Login();
             lg.setVisible(true);
-        }else
+        }
+        else
         {
             JOptionPane.showMessageDialog(null, "Connection Failed", "System", JOptionPane.DEFAULT_OPTION);
         }
@@ -45,6 +47,7 @@ public class MainSystemSetting {
     }
     
     public static Connection connection(){
+        
         try{
             String url ="jdbc:mariadb://localhost:3306/db_logistic";
             String user="root";
@@ -56,7 +59,9 @@ public class MainSystemSetting {
         } catch (Exception e) {
             System.err.println("koneksi gagal " +e.getMessage());
         }
+        
         return con;
+        
     }
     
 }

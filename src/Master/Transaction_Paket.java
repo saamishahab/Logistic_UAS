@@ -42,6 +42,25 @@ public class Transaction_Paket extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         btn_nextorder_lines = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(280, 500));
@@ -59,17 +78,17 @@ public class Transaction_Paket extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(10, 84, 249, 20);
+        jComboBox1.setBounds(10, 84, 260, 20);
 
         jLabel3.setText("Nama Pengirim");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(10, 115, 180, 14);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(10, 179, 249, 20);
+        jTextField1.setBounds(10, 179, 260, 20);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(10, 135, 249, 20);
+        jComboBox2.setBounds(10, 135, 260, 20);
 
         jLabel4.setText("No Telp");
         getContentPane().add(jLabel4);
@@ -81,7 +100,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(10, 230, 250, 20);
+        jComboBox3.setBounds(10, 230, 260, 20);
 
         jLabel6.setText("No Telp");
         getContentPane().add(jLabel6);
@@ -93,27 +112,119 @@ public class Transaction_Paket extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextField2);
-        jTextField2.setBounds(10, 280, 250, 20);
+        jTextField2.setBounds(10, 280, 260, 20);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 330, 250, 76);
+        jScrollPane1.setBounds(10, 330, 250, 96);
 
         jLabel7.setText("Catatan (Optional)");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(10, 310, 190, 14);
 
-        btn_nextorder_lines.setText("Next");
+        btn_nextorder_lines.setText("Proses");
         btn_nextorder_lines.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_nextorder_linesActionPerformed(evt);
             }
         });
         getContentPane().add(btn_nextorder_lines);
-        btn_nextorder_lines.setBounds(10, 420, 250, 23);
+        btn_nextorder_lines.setBounds(10, 440, 250, 23);
+
+        jLabel8.setText("Tambah Paket..");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(290, 70, 190, 14);
+
+        jLabel9.setText("Nama Paket");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(290, 90, 193, 14);
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(290, 110, 230, 20);
+
+        jLabel10.setText("Berat");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(290, 140, 210, 14);
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(290, 160, 230, 20);
+
+        jLabel11.setText("Volume");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(290, 190, 34, 14);
+
+        jTextField5.setText("0");
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(460, 210, 60, 20);
+
+        jLabel12.setText("T");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(450, 210, 20, 20);
+
+        jLabel13.setText("P");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(290, 210, 20, 20);
+
+        jTextField6.setText("0");
+        getContentPane().add(jTextField6);
+        jTextField6.setBounds(300, 210, 60, 20);
+
+        jLabel14.setText("L");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(370, 210, 20, 20);
+
+        jTextField7.setText("0");
+        getContentPane().add(jTextField7);
+        jTextField7.setBounds(380, 210, 60, 20);
+
+        jLabel15.setText("Hasil Berat");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(290, 250, 100, 14);
+        getContentPane().add(jTextField8);
+        jTextField8.setBounds(290, 270, 230, 20);
+
+        jButton1.setText("Simpan");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(290, 300, 230, 23);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nama Paket", "Berat", "Harga"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(530, 80, 580, 210);
+
+        jLabel16.setText("Total Biaya");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(810, 300, 160, 14);
+
+        jLabel17.setText("Rp. 0");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(980, 300, 130, 14);
 
         pack();
         setLocationRelativeTo(null);
@@ -126,6 +237,10 @@ public class Transaction_Paket extends javax.swing.JFrame {
     private void btn_nextorder_linesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nextorder_linesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_nextorder_linesActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,19 +279,38 @@ public class Transaction_Paket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_nextorder_lines;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     // End of variables declaration//GEN-END:variables
 }

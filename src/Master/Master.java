@@ -61,12 +61,34 @@ public class Master extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panel_menu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btn_pelanggan = new javax.swing.JButton();
         btn_kota = new javax.swing.JButton();
         btn_costestimate = new javax.swing.JButton();
         btn_agen = new javax.swing.JButton();
+        btn_pelanggan1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        btn_pelanggan2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        panel_cost_estimate = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        et_cariestimasi = new javax.swing.JTextField();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tableestimasi = new javax.swing.JTable();
+        jLabel39 = new javax.swing.JLabel();
+        et_kodeestimasi = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        btnClearestimasi = new javax.swing.JButton();
+        btSimpanestimasi = new javax.swing.JButton();
+        btUbahestimasi = new javax.swing.JButton();
+        btHapusestimasi = new javax.swing.JButton();
+        cb_kotakodeasal = new javax.swing.JComboBox<>();
+        jLabel41 = new javax.swing.JLabel();
+        cb_kotakodetujuan = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        et_hargaestimasi = new javax.swing.JTextField();
         panel_kota = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -81,6 +103,48 @@ public class Master extends javax.swing.JFrame {
         btSimpankota = new javax.swing.JButton();
         btUbahkota = new javax.swing.JButton();
         btHapusHapus = new javax.swing.JButton();
+        panel_employee = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        et_cariemployee = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tableemployee = new javax.swing.JTable();
+        jLabel25 = new javax.swing.JLabel();
+        et_kodeemployee = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        et_namaemployee = new javax.swing.JTextField();
+        btnClearemp = new javax.swing.JButton();
+        btSimpanemp = new javax.swing.JButton();
+        btUbahemp = new javax.swing.JButton();
+        btHapusemp = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        et_usernameemp = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        et_passwordemp = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        rbemp_Laki = new javax.swing.JRadioButton();
+        rbemp_Perempuan = new javax.swing.JRadioButton();
+        jLabel31 = new javax.swing.JLabel();
+        cb_idagen = new javax.swing.JComboBox<>();
+        panel_agent = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        et_cariagen = new javax.swing.JTextField();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tableAgen = new javax.swing.JTable();
+        jLabel33 = new javax.swing.JLabel();
+        et_kodeagen = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        et_namaagen = new javax.swing.JTextField();
+        btnClearagen = new javax.swing.JButton();
+        btSimpanagen = new javax.swing.JButton();
+        btUbahagen = new javax.swing.JButton();
+        btHapusagen = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        et_alamatagen = new javax.swing.JTextArea();
+        jLabel36 = new javax.swing.JLabel();
+        cb_kodekotaagen = new javax.swing.JComboBox<>();
         panel_pelanggan = new javax.swing.JPanel();
         et_kodepelanggan = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -110,12 +174,12 @@ public class Master extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(1090, 480));
+        setMinimumSize(new java.awt.Dimension(1090, 720));
         setResizable(false);
-        setSize(new java.awt.Dimension(1090, 480));
+        setSize(new java.awt.Dimension(1090, 720));
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        panel_menu.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Master Data");
 
@@ -152,58 +216,304 @@ public class Master extends javax.swing.JFrame {
                 btn_costestimateMouseClicked(evt);
             }
         });
+        btn_costestimate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_costestimateActionPerformed(evt);
+            }
+        });
 
-        btn_agen.setText("Drop Off Agen");
+        btn_agen.setText("Agent");
         btn_agen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_agen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_agenMouseClicked(evt);
             }
         });
+        btn_agen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agenActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_pelanggan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_kota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+        btn_pelanggan1.setText("Employee");
+        btn_pelanggan1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_pelanggan1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_pelanggan1MouseClicked(evt);
+            }
+        });
+        btn_pelanggan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pelanggan1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Laporan");
+
+        btn_pelanggan2.setText("Transaksi");
+        btn_pelanggan2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_pelanggan2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_pelanggan2MouseClicked(evt);
+            }
+        });
+        btn_pelanggan2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_pelanggan2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Logout");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel_menuLayout = new javax.swing.GroupLayout(panel_menu);
+        panel_menu.setLayout(panel_menuLayout);
+        panel_menuLayout.setHorizontalGroup(
+            panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_menuLayout.createSequentialGroup()
+                .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_menuLayout.createSequentialGroup()
+                        .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_menuLayout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(jLabel1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(panel_menuLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btn_costestimate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btn_costestimate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_menuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panel_menuLayout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel3))
+                            .addGroup(panel_menuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btn_pelanggan2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panel_menuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menuLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_pelanggan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_kota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_pelanggan1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panel_menuLayout.setVerticalGroup(
+            panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_menuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_pelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_pelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_kota, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_kota, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_costestimate, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_costestimate, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_pelanggan1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_pelanggan2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(10, 10, 120, 430);
+        getContentPane().add(panel_menu);
+        panel_menu.setBounds(10, 10, 120, 640);
+
+        panel_cost_estimate.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Estimasi Harga");
+
+        jLabel38.setText("Cari Kota Tujuan");
+
+        et_cariestimasi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                et_cariestimasiKeyTyped(evt);
+            }
+        });
+
+        tableestimasi.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Kode", "Kota Asal", "Kota Tujuan", "Harga"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableestimasi.getTableHeader().setReorderingAllowed(false);
+        tableestimasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableestimasiMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(tableestimasi);
+
+        jLabel39.setText("Kode");
+
+        et_kodeestimasi.setToolTipText("Nama");
+        et_kodeestimasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_kodeestimasiActionPerformed(evt);
+            }
+        });
+
+        jLabel40.setText("Kota Asal");
+
+        btnClearestimasi.setText("Clear");
+        btnClearestimasi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClearestimasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearestimasiMouseClicked(evt);
+            }
+        });
+        btnClearestimasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearestimasiActionPerformed(evt);
+            }
+        });
+
+        btSimpanestimasi.setText("Simpan");
+        btSimpanestimasi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btSimpanestimasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSimpanestimasiMouseClicked(evt);
+            }
+        });
+        btSimpanestimasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSimpanestimasiActionPerformed(evt);
+            }
+        });
+
+        btUbahestimasi.setText("Ubah");
+        btUbahestimasi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btUbahestimasi.setPreferredSize(new java.awt.Dimension(67, 23));
+        btUbahestimasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btUbahestimasiMouseClicked(evt);
+            }
+        });
+
+        btHapusestimasi.setText("Hapus");
+        btHapusestimasi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btHapusestimasi.setPreferredSize(new java.awt.Dimension(67, 23));
+        btHapusestimasi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHapusestimasiMouseClicked(evt);
+            }
+        });
+        btHapusestimasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHapusestimasiActionPerformed(evt);
+            }
+        });
+
+        jLabel41.setText("Kota Tujuan");
+
+        jLabel4.setText("Harga");
+
+        javax.swing.GroupLayout panel_cost_estimateLayout = new javax.swing.GroupLayout(panel_cost_estimate);
+        panel_cost_estimate.setLayout(panel_cost_estimateLayout);
+        panel_cost_estimateLayout.setHorizontalGroup(
+            panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cost_estimateLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cost_estimateLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(et_kodeestimasi)
+                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClearestimasi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(panel_cost_estimateLayout.createSequentialGroup()
+                        .addComponent(btSimpanestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(btUbahestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btHapusestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_kotakodeasal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_kotakodetujuan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4)
+                    .addComponent(et_hargaestimasi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(et_cariestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        panel_cost_estimateLayout.setVerticalGroup(
+            panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_cost_estimateLayout.createSequentialGroup()
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_cost_estimateLayout.createSequentialGroup()
+                        .addComponent(jLabel38)
+                        .addGap(6, 6, 6)
+                        .addComponent(et_cariestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_cost_estimateLayout.createSequentialGroup()
+                        .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(et_kodeestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_kotakodeasal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_kotakodetujuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(et_hargaestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnClearestimasi)
+                        .addGap(7, 7, 7)
+                        .addGroup(panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btSimpanestimasi)
+                            .addComponent(btUbahestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btHapusestimasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(224, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(panel_cost_estimate);
+        panel_cost_estimate.setBounds(140, 10, 750, 640);
 
         panel_kota.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -349,7 +659,7 @@ public class Master extends javax.swing.JFrame {
             panel_kotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_kotaLayout.createSequentialGroup()
                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panel_kotaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_kotaLayout.createSequentialGroup()
                         .addComponent(jLabel20)
@@ -372,11 +682,450 @@ public class Master extends javax.swing.JFrame {
                             .addComponent(btSimpankota)
                             .addComponent(btUbahkota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btHapusHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         getContentPane().add(panel_kota);
-        panel_kota.setBounds(140, 10, 750, 430);
+        panel_kota.setBounds(140, 10, 750, 640);
+
+        panel_employee.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Employee");
+
+        jLabel24.setText("Cari Employee");
+
+        et_cariemployee.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                et_cariemployeeKeyTyped(evt);
+            }
+        });
+
+        tableemployee.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Kode", "Nama"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableemployee.getTableHeader().setReorderingAllowed(false);
+        tableemployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableemployeeMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tableemployee);
+
+        jLabel25.setText("Kode Employee");
+
+        et_kodeemployee.setToolTipText("Nama");
+        et_kodeemployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_kodeemployeeActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Nama");
+
+        et_namaemployee.setToolTipText("Nama");
+        et_namaemployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_namaemployeeActionPerformed(evt);
+            }
+        });
+
+        btnClearemp.setText("Clear");
+        btnClearemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClearemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearempMouseClicked(evt);
+            }
+        });
+        btnClearemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearempActionPerformed(evt);
+            }
+        });
+
+        btSimpanemp.setText("Simpan");
+        btSimpanemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btSimpanemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSimpanempMouseClicked(evt);
+            }
+        });
+        btSimpanemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSimpanempActionPerformed(evt);
+            }
+        });
+
+        btUbahemp.setText("Ubah");
+        btUbahemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btUbahemp.setPreferredSize(new java.awt.Dimension(67, 23));
+        btUbahemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btUbahempMouseClicked(evt);
+            }
+        });
+        btUbahemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUbahempActionPerformed(evt);
+            }
+        });
+
+        btHapusemp.setText("Hapus");
+        btHapusemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btHapusemp.setPreferredSize(new java.awt.Dimension(67, 23));
+        btHapusemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHapusempMouseClicked(evt);
+            }
+        });
+        btHapusemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHapusempActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setText("Username");
+
+        et_usernameemp.setToolTipText("Nama");
+        et_usernameemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_usernameempActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Password");
+
+        et_passwordemp.setToolTipText("Nama");
+        et_passwordemp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        et_passwordemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_passwordempActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Jenis Kelamin");
+
+        rbemp_Laki.setBackground(new java.awt.Color(255, 255, 255));
+        rbemp_Laki.setText("Laki - laki");
+        rbemp_Laki.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbemp_Laki.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rbemp_LakiStateChanged(evt);
+            }
+        });
+        rbemp_Laki.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbemp_LakiMouseClicked(evt);
+            }
+        });
+        rbemp_Laki.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbemp_LakiActionPerformed(evt);
+            }
+        });
+
+        rbemp_Perempuan.setBackground(new java.awt.Color(255, 255, 255));
+        rbemp_Perempuan.setText("Perempuan");
+        rbemp_Perempuan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbemp_Perempuan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbemp_PerempuanMouseClicked(evt);
+            }
+        });
+        rbemp_Perempuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbemp_PerempuanActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText("Agen");
+
+        javax.swing.GroupLayout panel_employeeLayout = new javax.swing.GroupLayout(panel_employee);
+        panel_employee.setLayout(panel_employeeLayout);
+        panel_employeeLayout.setHorizontalGroup(
+            panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_employeeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel_employeeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_employeeLayout.createSequentialGroup()
+                                .addComponent(btSimpanemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btUbahemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btHapusemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnClearemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(et_passwordemp)
+                            .addComponent(et_usernameemp)
+                            .addComponent(et_namaemployee)
+                            .addComponent(et_kodeemployee)
+                            .addGroup(panel_employeeLayout.createSequentialGroup()
+                                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                                        .addComponent(rbemp_Laki, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, 0)
+                                        .addComponent(rbemp_Perempuan, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(cb_idagen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(et_cariemployee, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        panel_employeeLayout.setVerticalGroup(
+            panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_employeeLayout.createSequentialGroup()
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addGap(6, 6, 6)
+                        .addComponent(et_cariemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(et_kodeemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(et_namaemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel30)
+                        .addGap(6, 6, 6)
+                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbemp_Laki)
+                            .addComponent(rbemp_Perempuan))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(et_usernameemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(et_passwordemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cb_idagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnClearemp)
+                        .addGap(7, 7, 7)
+                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btSimpanemp)
+                            .addComponent(btUbahemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btHapusemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(224, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(panel_employee);
+        panel_employee.setBounds(140, 10, 750, 640);
+
+        panel_agent.setBackground(new java.awt.Color(255, 255, 255));
+        panel_agent.setLayout(null);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Agen");
+        panel_agent.add(jLabel27);
+        jLabel27.setBounds(0, 0, 750, 30);
+
+        jLabel32.setText("Cari Agen");
+        panel_agent.add(jLabel32);
+        jLabel32.setBounds(320, 36, 190, 14);
+
+        et_cariagen.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                et_cariagenKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                et_cariagenKeyTyped(evt);
+            }
+        });
+        panel_agent.add(et_cariagen);
+        et_cariagen.setBounds(320, 56, 420, 20);
+
+        tableAgen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Kode", "Nama Agen"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableAgen.getTableHeader().setReorderingAllowed(false);
+        tableAgen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableAgenMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(tableAgen);
+
+        panel_agent.add(jScrollPane8);
+        jScrollPane8.setBounds(320, 86, 420, 330);
+
+        jLabel33.setText("Kode Agen");
+        panel_agent.add(jLabel33);
+        jLabel33.setBounds(10, 36, 120, 20);
+
+        et_kodeagen.setToolTipText("Nama");
+        et_kodeagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_kodeagenActionPerformed(evt);
+            }
+        });
+        panel_agent.add(et_kodeagen);
+        et_kodeagen.setBounds(10, 56, 300, 20);
+
+        jLabel34.setText("Nama Agen");
+        panel_agent.add(jLabel34);
+        jLabel34.setBounds(10, 86, 120, 20);
+
+        et_namaagen.setToolTipText("Nama");
+        et_namaagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_namaagenActionPerformed(evt);
+            }
+        });
+        panel_agent.add(et_namaagen);
+        et_namaagen.setBounds(10, 116, 300, 20);
+
+        btnClearagen.setText("Clear");
+        btnClearagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClearagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearagenMouseClicked(evt);
+            }
+        });
+        btnClearagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearagenActionPerformed(evt);
+            }
+        });
+        panel_agent.add(btnClearagen);
+        btnClearagen.setBounds(10, 350, 300, 23);
+
+        btSimpanagen.setText("Simpan");
+        btSimpanagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btSimpanagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSimpanagenMouseClicked(evt);
+            }
+        });
+        btSimpanagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSimpanagenActionPerformed(evt);
+            }
+        });
+        panel_agent.add(btSimpanagen);
+        btSimpanagen.setBounds(10, 380, 90, 23);
+
+        btUbahagen.setText("Ubah");
+        btUbahagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btUbahagen.setPreferredSize(new java.awt.Dimension(67, 23));
+        btUbahagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btUbahagenMouseClicked(evt);
+            }
+        });
+        btUbahagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUbahagenActionPerformed(evt);
+            }
+        });
+        panel_agent.add(btUbahagen);
+        btUbahagen.setBounds(120, 380, 90, 23);
+
+        btHapusagen.setText("Hapus");
+        btHapusagen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btHapusagen.setPreferredSize(new java.awt.Dimension(67, 23));
+        btHapusagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHapusagenMouseClicked(evt);
+            }
+        });
+        btHapusagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHapusagenActionPerformed(evt);
+            }
+        });
+        panel_agent.add(btHapusagen);
+        btHapusagen.setBounds(220, 380, 90, 23);
+
+        jLabel35.setText("Alamat");
+        panel_agent.add(jLabel35);
+        jLabel35.setBounds(10, 147, 120, 20);
+
+        et_alamatagen.setColumns(20);
+        et_alamatagen.setRows(5);
+        jScrollPane1.setViewportView(et_alamatagen);
+
+        panel_agent.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 173, 300, 96);
+
+        jLabel36.setText("Kota");
+        panel_agent.add(jLabel36);
+        jLabel36.setBounds(10, 275, 120, 20);
+
+        panel_agent.add(cb_kodekotaagen);
+        cb_kodekotaagen.setBounds(10, 301, 300, 20);
+
+        getContentPane().add(panel_agent);
+        panel_agent.setBounds(140, 10, 750, 640);
 
         panel_pelanggan.setBackground(new java.awt.Color(255, 255, 255));
         panel_pelanggan.setLayout(null);
@@ -402,7 +1151,7 @@ public class Master extends javax.swing.JFrame {
 
         jLabel13.setText("Jenis Kelamin");
         panel_pelanggan.add(jLabel13);
-        jLabel13.setBounds(10, 150, 63, 14);
+        jLabel13.setBounds(10, 150, 90, 14);
 
         rbLaki.setBackground(new java.awt.Color(255, 255, 255));
         rbLaki.setText("Laki - laki");
@@ -423,7 +1172,7 @@ public class Master extends javax.swing.JFrame {
             }
         });
         panel_pelanggan.add(rbLaki);
-        rbLaki.setBounds(10, 170, 69, 23);
+        rbLaki.setBounds(10, 170, 100, 23);
 
         rbPerempuan.setBackground(new java.awt.Color(255, 255, 255));
         rbPerempuan.setText("Perempuan");
@@ -439,7 +1188,7 @@ public class Master extends javax.swing.JFrame {
             }
         });
         panel_pelanggan.add(rbPerempuan);
-        rbPerempuan.setBounds(110, 170, 79, 23);
+        rbPerempuan.setBounds(110, 170, 110, 23);
 
         jLabel14.setText("No Handphone");
         panel_pelanggan.add(jLabel14);
@@ -456,7 +1205,7 @@ public class Master extends javax.swing.JFrame {
         jScrollPane2.setViewportView(et_alamat);
 
         panel_pelanggan.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 270, 300, 76);
+        jScrollPane2.setBounds(10, 270, 300, 96);
 
         et_caripelanggan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -545,6 +1294,11 @@ public class Master extends javax.swing.JFrame {
                 btUbahPelangganMouseClicked(evt);
             }
         });
+        btUbahPelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUbahPelangganActionPerformed(evt);
+            }
+        });
         panel_pelanggan.add(btUbahPelanggan);
         btUbahPelanggan.setBounds(120, 400, 90, 23);
 
@@ -580,7 +1334,7 @@ public class Master extends javax.swing.JFrame {
         btnClearpelanggan.setBounds(10, 370, 300, 23);
 
         getContentPane().add(panel_pelanggan);
-        panel_pelanggan.setBounds(140, 10, 750, 430);
+        panel_pelanggan.setBounds(140, 10, 750, 640);
 
         jLabel18.setText("Kelas  : S6L");
         getContentPane().add(jLabel18);
@@ -596,7 +1350,7 @@ public class Master extends javax.swing.JFrame {
         jScrollPane6.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane6);
-        jScrollPane6.setBounds(900, 70, 150, 370);
+        jScrollPane6.setBounds(900, 70, 150, 580);
 
         pack();
         setLocationRelativeTo(null);
@@ -851,6 +1605,8 @@ public class Master extends javax.swing.JFrame {
 
     private void et_carikotaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_et_carikotaKeyTyped
         // TODO add your handling code here:
+        System.out.println("typed");
+        CariKota();
     }//GEN-LAST:event_et_carikotaKeyTyped
 
     private void tableKotaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableKotaMouseClicked
@@ -894,7 +1650,7 @@ public class Master extends javax.swing.JFrame {
             
             try {
                 
-                String checkquery = "SELECT count(*) from kota WHERE kode_kota = '"+et_kodekota.getText().toString()+"'";
+                String checkquery = "SELECT count(*) from kota WHERE kode = '"+et_kodekota.getText().toString()+"'";
                 mnSetting.ps = mnSetting.con.prepareStatement(checkquery);
                 final ResultSet resultSet = mnSetting.ps.executeQuery();
                 int count = 0;
@@ -906,7 +1662,7 @@ public class Master extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Kode "+et_kodekota.getText().toString()+" sudah terdaftar, mohon gunakan kode yang lain", "System", JOptionPane.DEFAULT_OPTION);
                 }else
                 {
-                    String createQuery = "insert into kota (kode_kota,nama_kota) values ('"+et_kodekota.getText().toString()+"','"+et_namakota.getText().toString()+"')";
+                    String createQuery = "insert into kota (kode,nama_kota) values ('"+et_kodekota.getText().toString()+"','"+et_namakota.getText().toString()+"')";
                     mnSetting.stm.executeUpdate(createQuery);
                     getDataKota();
                     clearKotaField();
@@ -937,7 +1693,7 @@ public class Master extends javax.swing.JFrame {
             
             try {
                 
-                String checkquery = "SELECT count(*) from kota WHERE kode_kota = '"+et_kodekota.getText().toString()+"'";
+                String checkquery = "SELECT count(*) from kota WHERE kode = '"+et_kodekota.getText().toString()+"'";
                 mnSetting.ps = mnSetting.con.prepareStatement(checkquery);
                 final ResultSet resultSet = mnSetting.ps.executeQuery();
                 int count = 0;
@@ -946,7 +1702,7 @@ public class Master extends javax.swing.JFrame {
                 }
                 if(count > 0)
                 {
-                    String updateQuery = "update kota SET nama_kota='"+et_namakota.getText().toString()+"' where kode_kota='"+et_kodekota.getText().toString()+"'";
+                    String updateQuery = "update kota SET nama_kota='"+et_namakota.getText().toString()+"' where kode='"+et_kodekota.getText().toString()+"'";
                     mnSetting.stm.executeUpdate(updateQuery);
                     JOptionPane.showMessageDialog(null, "Kode "+et_kodekota.getText().toString()+" berhasil diperbarui", "System", JOptionPane.DEFAULT_OPTION);
                     getDataKota();
@@ -970,13 +1726,22 @@ public class Master extends javax.swing.JFrame {
 
     private void btn_pelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pelangganActionPerformed
         // TODO add your handling code here:
+        panel_employee.setVisible(false);
+        panel_pelanggan.setVisible(true);
+        panel_kota.setVisible(false);
+        panel_agent.setVisible(false);
+        panel_cost_estimate.setVisible(false);
+        getConnection();
+        getDataKota();
     }//GEN-LAST:event_btn_pelangganActionPerformed
 
     private void btn_kotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kotaActionPerformed
         // TODO add your handling code here:
-        
+        panel_cost_estimate.setVisible(false);
+        panel_employee.setVisible(false);
         panel_pelanggan.setVisible(false);
         panel_kota.setVisible(true);
+        panel_agent.setVisible(false);
         getConnection();
         getDataKota();
     }//GEN-LAST:event_btn_kotaActionPerformed
@@ -997,7 +1762,7 @@ public class Master extends javax.swing.JFrame {
             try {
                             
                 
-                String checkQuery = "SELECT count(*) from kota WHERE kode_kota = '"+et_kodekota.getText().toString()+"'";
+                String checkQuery = "SELECT count(*) from kota WHERE kode = '"+et_kodekota.getText().toString()+"'";
                 mnSetting.ps = mnSetting.con.prepareStatement(checkQuery);
                 final ResultSet resultSet = mnSetting.ps.executeQuery();
                 int count = 0;
@@ -1009,7 +1774,7 @@ public class Master extends javax.swing.JFrame {
                     
                     int dialogResult = JOptionPane.showConfirmDialog (null, "Apakah kamu yakin ingin menghapus kode "+et_kodekota.getText().toString()+"?","Warning",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
                     if(dialogResult == JOptionPane.YES_OPTION){
-                       String deleteQuery = "delete from kota WHERE kode_kota='"+et_kodekota.getText().toString()+"'";
+                       String deleteQuery = "delete from kota WHERE kode='"+et_kodekota.getText().toString()+"'";
                         mnSetting.stm.executeUpdate(deleteQuery);
                         JOptionPane.showMessageDialog(null, "Kode "+et_kodekota.getText().toString()+" berhasil dihapus", "System", JOptionPane.DEFAULT_OPTION);
                         getDataKota();
@@ -1028,6 +1793,603 @@ public class Master extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_btHapusHapusActionPerformed
+
+    private void btn_pelanggan1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pelanggan1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pelanggan1MouseClicked
+
+    private void btn_pelanggan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pelanggan1ActionPerformed
+
+        panel_cost_estimate.setVisible(false);
+        panel_employee.setVisible(true);
+        panel_pelanggan.setVisible(false);
+        panel_kota.setVisible(false);
+        panel_agent.setVisible(false);
+        getConnection();
+        getDataEmployee(); 
+        getAgendropoff();// TODO add your handling code here:
+    }//GEN-LAST:event_btn_pelanggan1ActionPerformed
+
+    private void et_cariemployeeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_et_cariemployeeKeyTyped
+        // TODO add your handling code here:
+        System.out.println("typed");
+        CariEmployee();
+    }//GEN-LAST:event_et_cariemployeeKeyTyped
+
+    private void tableemployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableemployeeMouseClicked
+        // TODO add your handling code here:
+        
+        String kode = (String) tableemployee.getValueAt(tableemployee.getSelectedRow(), 0);
+        String nama = (String) tableemployee.getValueAt(tableemployee.getSelectedRow(), 1);
+        
+        try {
+            String select_data = "select *from employee where kode='"+kode+"'";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            while (rs_data.next()) {
+                et_kodeemployee.setText(kode);
+                et_namaemployee.setText(nama);
+                if(rs_data.getString("gender").toLowerCase().equals("laki - laki"))
+                {
+                    rbemp_Laki.setSelected(true);
+                    rbemp_Perempuan.setSelected(false);
+                }else
+                {
+                    rbemp_Laki.setSelected(false);
+                    rbemp_Perempuan.setSelected(true);
+                }
+                et_usernameemp.setText(rs_data.getString("username"));
+                et_passwordemp.setText(rs_data.getString("password"));
+                for(int i=0;i < cb_idagen.getItemCount(); i++)
+                {
+                    if(cb_idagen.getItemAt(i).toString().contains(rs_data.getString("kode_agent")))
+                    {
+                        cb_idagen.setSelectedIndex(i);
+                    }
+                }
+                
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+
+    }//GEN-LAST:event_tableemployeeMouseClicked
+
+    private void et_kodeemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_kodeemployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_kodeemployeeActionPerformed
+
+    private void et_namaemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_namaemployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_namaemployeeActionPerformed
+
+    private void btnClearempMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearempMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearempMouseClicked
+
+    private void btnClearempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearempActionPerformed
+        // TODO add your handling code here:
+        clearEmployeeField();
+    }//GEN-LAST:event_btnClearempActionPerformed
+
+    private void btSimpanempMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSimpanempMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSimpanempMouseClicked
+
+    private void btSimpanempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimpanempActionPerformed
+        // TODO add your handling code here:
+        
+        if(rbemp_Laki.isSelected())
+        {
+            jkel = rbemp_Laki.getText().toString();
+        }
+        else
+        {
+            jkel = rbemp_Perempuan.getText().toString();
+        }
+        
+        if(et_kodeemployee.getText().length() == 0 || et_namaemployee.getText().length() == 0 || et_usernameemp.getText().length() == 0 || (rbemp_Laki.isSelected() == false && rbemp_Perempuan.isSelected() == false) || et_passwordemp.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon lengkapi data employee di atas", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkdata = "SELECT count(*) from employee WHERE kode = '"+et_kodeemployee.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeemployee.getText().toString()+" sudah terdaftar, mohon gunakan kode yang lain", "System", JOptionPane.DEFAULT_OPTION);
+                }else
+                {
+                    String[] agen = cb_idagen.getSelectedItem().toString().split(" - ");
+                    String agen_kode = agen[0];
+                    String createdata = "insert into employee (kode,name,gender,username,password,kode_agent) values ('"+et_kodeemployee.getText().toString()+"','"+et_namaemployee.getText().toString()+"','"+jkel+"','"+et_usernameemp.getText().toString()+"','"+et_passwordemp.getText().toString()+"','"+agen_kode+"')";
+                    mnSetting.stm.executeUpdate(createdata);
+                    getDataEmployee();
+                    clearEmployeeField();
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error insert data pelanggan\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btSimpanempActionPerformed
+
+    private void btUbahempMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btUbahempMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btUbahempMouseClicked
+
+    private void btHapusempMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHapusempMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btHapusempMouseClicked
+
+    private void btHapusempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHapusempActionPerformed
+        // TODO add your handling code here:
+        
+        
+        if(et_kodeemployee.getText().length() == 0 || et_namaemployee.getText().length() == 0 || et_usernameemp.getText().length() == 0 || (rbemp_Laki.isSelected() == false && rbemp_Perempuan.isSelected() == false) || et_passwordemp.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon lengkapi data employee di atas", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkdata = "SELECT count(*) from employee WHERE kode = '"+et_kodeemployee.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    
+                    int dialogResult = JOptionPane.showConfirmDialog (null, "Apakah kamu yakin ingin menghapus kode "+et_kodeemployee.getText().toString()+"?","Warning",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+                    if(dialogResult == JOptionPane.YES_OPTION){
+                       String deletedata = "delete from employee WHERE kode='"+et_kodeemployee.getText().toString()+"'";
+                        mnSetting.stm.executeUpdate(deletedata);
+                        JOptionPane.showMessageDialog(null, "Kode "+et_kodeemployee.getText().toString()+" berhasil dihapus", "System", JOptionPane.DEFAULT_OPTION);
+                        getDataEmployee();
+                        clearEmployeeField();
+                    }
+                    
+                }else
+                {
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeemployee.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar employee dikanan untuk mendapatkan kode employee", "System", JOptionPane.DEFAULT_OPTION);
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error delete data\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btHapusempActionPerformed
+
+    private void et_usernameempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_usernameempActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_usernameempActionPerformed
+
+    private void et_passwordempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_passwordempActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_passwordempActionPerformed
+
+    private void rbemp_LakiStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rbemp_LakiStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbemp_LakiStateChanged
+
+    private void rbemp_LakiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbemp_LakiMouseClicked
+        // TODO add your handling code here:
+        rbemp_Laki.setSelected(true);
+        if(rbemp_Laki.isSelected())
+        {
+           rbemp_Perempuan.setSelected(false);
+        }else
+        {
+            
+        }
+    }//GEN-LAST:event_rbemp_LakiMouseClicked
+
+    private void rbemp_LakiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbemp_LakiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbemp_LakiActionPerformed
+
+    private void rbemp_PerempuanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbemp_PerempuanMouseClicked
+        // TODO add your handling code here:
+        rbemp_Perempuan.setSelected(true);
+        if(rbemp_Perempuan.isSelected())
+        {
+           rbemp_Laki.setSelected(false);
+        }else
+        {
+            
+        }
+    }//GEN-LAST:event_rbemp_PerempuanMouseClicked
+
+    private void rbemp_PerempuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbemp_PerempuanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbemp_PerempuanActionPerformed
+
+    private void btUbahempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUbahempActionPerformed
+        // TODO add your handling code here:
+        
+        if(rbemp_Laki.isSelected())
+        {
+            jkel = rbemp_Laki.getText().toString();
+        }
+        else
+        {
+            jkel = rbemp_Perempuan.getText().toString();
+        }
+        
+        if(et_kodeemployee.getText().length() == 0 || et_namaemployee.getText().length() == 0 || et_usernameemp.getText().length() == 0 || (rbemp_Laki.isSelected() == false && rbemp_Perempuan.isSelected() == false) || et_passwordemp.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon pilih daftar customer di kanan", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkdata = "SELECT count(*) from employee WHERE kode = '"+et_kodeemployee.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    
+                    String[] agen = cb_idagen.getSelectedItem().toString().split(" - ");
+                    String agen_kode = agen[0];
+                    String updatedata = "update employee SET name='"+et_namaemployee.getText().toString()+"', gender='"+jkel+"', username='"+et_usernameemp.getText().toString()+"', password='"+et_passwordemp.getText().toString()+"', kode_agent='"+agen_kode+"' where kode='"+et_kodeemployee.getText().toString()+"'";
+                    mnSetting.stm.executeUpdate(updatedata);
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeemployee.getText().toString()+" berhasil diperbarui", "System", JOptionPane.DEFAULT_OPTION);
+                    getDataEmployee();
+                    clearEmployeeField();
+                }else
+                {
+                    
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeemployee.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar employee dikanan untuk mendapatkan kode employee", "System", JOptionPane.DEFAULT_OPTION);
+                
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error update data employee\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btUbahempActionPerformed
+
+    private void btn_pelanggan2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pelanggan2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pelanggan2MouseClicked
+
+    private void btn_pelanggan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pelanggan2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_pelanggan2ActionPerformed
+
+    private void btn_agenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenActionPerformed
+        // TODO add your handling code here:
+        panel_cost_estimate.setVisible(false);
+        panel_employee.setVisible(false);
+        panel_pelanggan.setVisible(false);
+        panel_kota.setVisible(false);
+        panel_agent.setVisible(true);
+        getConnection();
+        getDataAgen(); 
+        getcbKota();
+    }//GEN-LAST:event_btn_agenActionPerformed
+
+    private void btUbahPelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUbahPelangganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btUbahPelangganActionPerformed
+
+    private void et_cariagenKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_et_cariagenKeyTyped
+        // TODO add your handling code here:
+        System.out.println("typed");
+        CariAgen();
+    }//GEN-LAST:event_et_cariagenKeyTyped
+
+    private void tableAgenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableAgenMouseClicked
+        // TODO add your handling code here:
+        String kode = (String) tableAgen.getValueAt(tableAgen.getSelectedRow(), 0);
+        String nama = (String) tableAgen.getValueAt(tableAgen.getSelectedRow(), 1);
+        
+        try {
+            String select_data = "select *from agent where kode='"+kode+"'";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            while (rs_data.next()) {
+                et_kodeagen.setText(kode);
+                et_namaagen.setText(nama);
+                et_alamatagen.setText(rs_data.getString("alamat"));
+                for(int i=0;i < cb_kodekotaagen.getItemCount(); i++)
+                {
+                    if(cb_kodekotaagen.getItemAt(i).toString().contains(rs_data.getString("kota_kode")))
+                    {
+                        cb_kodekotaagen.setSelectedIndex(i);
+                    }
+                }
+                
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }//GEN-LAST:event_tableAgenMouseClicked
+
+    private void et_kodeagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_kodeagenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_kodeagenActionPerformed
+
+    private void et_namaagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_namaagenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_namaagenActionPerformed
+
+    private void btnClearagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearagenMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearagenMouseClicked
+
+    private void btnClearagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearagenActionPerformed
+        // TODO add your handling code here:
+        clearAgenField();
+    }//GEN-LAST:event_btnClearagenActionPerformed
+
+    private void btSimpanagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSimpanagenMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSimpanagenMouseClicked
+
+    private void btSimpanagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimpanagenActionPerformed
+        // TODO add your handling code here:
+        
+        if(et_kodeagen.getText().length() == 0 || et_namaagen.getText().length() == 0 || et_alamatagen.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon lengkapi data agen di atas", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkquery = "SELECT count(*) from agent WHERE kode = '"+et_kodeagen.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkquery);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodekota.getText().toString()+" sudah terdaftar, mohon gunakan kode yang lain", "System", JOptionPane.DEFAULT_OPTION);
+                }else
+                {
+                    String[] kota = cb_kodekotaagen.getSelectedItem().toString().split(" - ");
+                    String kodekota = kota[0];
+                    String createQuery = "insert into agent (kode,agent_name,alamat,kota_kode) values ('"+et_kodeagen.getText().toUpperCase().toString()+"','"+et_namaagen.getText().toUpperCase().toString()+"','"+et_alamatagen.getText().toString()+"','"+kodekota+"')";
+                    mnSetting.stm.executeUpdate(createQuery);
+                    getDataAgen();
+                    clearAgenField();
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error insert data agen\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btSimpanagenActionPerformed
+
+    private void btUbahagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btUbahagenMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btUbahagenMouseClicked
+
+    private void btHapusagenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHapusagenMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btHapusagenMouseClicked
+
+    private void btHapusagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHapusagenActionPerformed
+        // TODO add your handling code here:
+        if(et_kodeagen.getText().length() == 0 || et_namaagen.getText().length() == 0 || et_alamatagen.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon lengkapi data agen di atas", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkdata = "SELECT count(*) from agent WHERE kode = '"+et_kodeagen.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    
+                    int dialogResult = JOptionPane.showConfirmDialog (null, "Apakah kamu yakin ingin menghapus kode "+et_kodeagen.getText().toString()+"?","Warning",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+                    if(dialogResult == JOptionPane.YES_OPTION){
+                       String deletedata = "delete from agent WHERE kode='"+et_kodeagen.getText().toString()+"'";
+                        mnSetting.stm.executeUpdate(deletedata);
+                        JOptionPane.showMessageDialog(null, "Kode "+et_kodeagen.getText().toString()+" berhasil dihapus", "System", JOptionPane.DEFAULT_OPTION);
+                        getDataAgen();
+                        clearAgenField();
+                    }
+                    
+                }else
+                {
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeagen.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar agen dikanan untuk mendapatkan kode agen", "System", JOptionPane.DEFAULT_OPTION);
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error delete data\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btHapusagenActionPerformed
+
+    private void btn_costestimateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_costestimateActionPerformed
+        // TODO add your handling code here:
+        panel_employee.setVisible(false);
+        panel_pelanggan.setVisible(false);
+        panel_kota.setVisible(false);
+        panel_agent.setVisible(false);
+        panel_cost_estimate.setVisible(true);
+        getConnection();
+        getDataEmployee(); 
+        getKotaAsal();
+        getKotaTujuan();
+    }//GEN-LAST:event_btn_costestimateActionPerformed
+
+    private void et_cariagenKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_et_cariagenKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_cariagenKeyPressed
+
+    private void btUbahagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUbahagenActionPerformed
+        // TODO add your handling code here:
+        if(et_kodeagen.getText().length() == 0 || et_namaagen.getText().length() == 0 || et_alamatagen.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon pilih daftar agen di kanan", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            try {
+                
+                String checkdata = "SELECT count(*) from agent WHERE kode = '"+et_kodeagen.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                
+                if(count > 0)
+                {
+                    
+                    String[] kota = cb_kodekotaagen.getSelectedItem().toString().split(" - ");
+                    String kota_kode = kota[0];
+                    String updatedata = "update agent SET agent_name='"+et_namaagen.getText().toString()+"', alamat='"+et_alamatagen.getText().toString()+"', kota_kode='"+kota_kode+"' where kode='"+et_kodeagen.getText().toString()+"'";
+                    mnSetting.stm.executeUpdate(updatedata);
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeagen.getText().toString()+" berhasil diperbarui", "System", JOptionPane.DEFAULT_OPTION);
+                    getDataAgen();
+                    clearAgenField();
+                }else
+                {
+                    
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeagen.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar agen dikanan untuk mendapatkan kode agen", "System", JOptionPane.DEFAULT_OPTION);
+                
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error update data\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btUbahagenActionPerformed
+
+    private void et_cariestimasiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_et_cariestimasiKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_cariestimasiKeyTyped
+
+    private void tableestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableestimasiMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableestimasiMouseClicked
+
+    private void et_kodeestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_kodeestimasiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_kodeestimasiActionPerformed
+
+    private void btnClearestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearestimasiMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearestimasiMouseClicked
+
+    private void btnClearestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearestimasiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClearestimasiActionPerformed
+
+    private void btSimpanestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSimpanestimasiMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSimpanestimasiMouseClicked
+
+    private void btSimpanestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSimpanestimasiActionPerformed
+        // TODO add your handling code here:
+        if(et_kodeestimasi.getText().length() == 0 || et_hargaestimasi.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon lengkapi data estimasi di atas", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkquery = "SELECT count(*) from cost_estimate WHERE kode = '"+et_kodeestimasi.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkquery);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeestimasi.getText().toString()+" sudah terdaftar, mohon gunakan kode yang lain", "System", JOptionPane.DEFAULT_OPTION);
+                }else
+                {
+                    String[] agenasal = cb_kotakodeasal.getSelectedItem().toString().split(" - ");
+                    String asal = agenasal[0];
+                    String[] agentujuan = cb_kotakodetujuan.getSelectedItem().toString().split(" - ");
+                    String tujuan = agentujuan[0];
+                    String createQuery = "insert into cost_estimate (kode,from_city_kode,to_city_kode,cost_perkg) values ('"+et_kodeestimasi.getText().toString()+"','"+asal+"','"+tujuan+"',"+et_hargaestimasi.getText().toString()+")";
+                    mnSetting.stm.executeUpdate(createQuery);
+//                    getDataKota();
+//                    clearKotaField();
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error insert data\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btSimpanestimasiActionPerformed
+
+    private void btUbahestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btUbahestimasiMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btUbahestimasiMouseClicked
+
+    private void btHapusestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btHapusestimasiMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btHapusestimasiMouseClicked
+
+    private void btHapusestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHapusestimasiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btHapusestimasiActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1083,6 +2445,15 @@ public class Master extends javax.swing.JFrame {
         }
     }
     
+    public void clearEmployeeField()
+    {
+        et_kodeemployee.setText("");
+        et_namaemployee.setText("");
+        et_usernameemp.setText("");
+        et_passwordemp.setText("");
+        cb_idagen.setSelectedIndex(0);
+    }
+    
     public void clearCustomerField()
     {
         et_kodepelanggan.setText("");
@@ -1095,6 +2466,76 @@ public class Master extends javax.swing.JFrame {
     {
         et_kodekota.setText("");
         et_namakota.setText("");
+    }
+    
+    public void clearAgenField()
+    {
+        et_kodeagen.setText("");
+        et_namaagen.setText("");
+        et_alamatagen.setText("");
+    }
+    
+    public void getAgendropoff()
+    {
+        ArrayList<DataAgenDropOff> arraylist_data = new ArrayList<>();
+        cb_idagen.removeAllItems();
+        
+         try {
+            String select_data = "select *from agent";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataAgenDropOff dt;
+            
+            while (rs_data.next()) {
+                dt = new DataAgenDropOff(rs_data.getString("kode"), rs_data.getString("agent_name"), rs_data.getString("alamat"), rs_data.getString("kota_kode"));
+                arraylist_data.add(dt);
+                cb_idagen.addItem(dt.getKode()+" - "+dt.getNama_agen());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+    }
+    
+    public void getKotaAsal()
+    {
+        ArrayList<DataKota> arraylist_data = new ArrayList<>();
+        cb_kotakodeasal.removeAllItems();
+        
+         try {
+            String select_data = "select *from kota";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataKota dt;
+            
+            while (rs_data.next()) {
+                dt = new DataKota(rs_data.getString("kode"), rs_data.getString("nama_kota"));
+                arraylist_data.add(dt);
+                cb_kotakodeasal.addItem(dt.getKode()+" - "+dt.getNama());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+    }
+    
+        public void getKotaTujuan()
+    {
+        ArrayList<DataKota> arraylist_data = new ArrayList<>();
+        cb_kotakodetujuan.removeAllItems();
+        
+         try {
+            String select_data = "select *from kota";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataKota dt;
+            
+            while (rs_data.next()) {
+                dt = new DataKota(rs_data.getString("kode"), rs_data.getString("nama_kota"));
+                arraylist_data.add(dt);
+                cb_kotakodetujuan.addItem(dt.getKode()+" - "+dt.getNama());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
     }
     
     public void getDataCustomer()
@@ -1123,6 +2564,62 @@ public class Master extends javax.swing.JFrame {
             row[3] = arraylist_customer.get(i).getNotelp();
             row[4] = arraylist_customer.get(i).getAlamat();
             model_Pelanggan.addRow(row);
+        }
+        
+    }
+    
+    public void getDataEmployee()
+    {
+        ArrayList<DataEmployee> arraylist_emp = new ArrayList<>();
+            
+        try {
+            String select_data = "select *from employee";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataEmployee dt;
+            while (rs_data.next()) {
+                dt = new DataEmployee(rs_data.getString("kode"), rs_data.getString("name"), rs_data.getString("gender"), rs_data.getString("username"), rs_data.getString("password"), rs_data.getString("kode_agent"));
+                arraylist_emp.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        DefaultTableModel model_data = (DefaultTableModel)tableemployee.getModel();
+        model_data.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_emp.size(); i++) {
+            row[0] = arraylist_emp.get(i).getKode();
+            row[1] = arraylist_emp.get(i).getNama();
+            model_data.addRow(row);
+        }
+        
+    }
+    
+    public void CariEmployee()
+    {
+        
+        
+        ArrayList<DataEmployee> arraylist_emp = new ArrayList<>();
+            
+        try {
+            String select_data = "select * from employee where name like '%" + et_cariemployee.getText().toString() + "%'";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataEmployee dt;
+            while (rs_data.next()) {
+                dt = new DataEmployee(rs_data.getString("kode"), rs_data.getString("name"), rs_data.getString("gender"), rs_data.getString("username"), rs_data.getString("password"), rs_data.getString("kode_agent"));
+                arraylist_emp.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        DefaultTableModel model_data = (DefaultTableModel)tableemployee.getModel();
+        model_data.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_emp.size(); i++) {
+            row[0] = arraylist_emp.get(i).getKode();
+            row[1] = arraylist_emp.get(i).getNama();
+            model_data.addRow(row);
         }
         
     }
@@ -1159,6 +2656,61 @@ public class Master extends javax.swing.JFrame {
         
     }
     
+    public void CariAgen()
+    {
+        ArrayList<DataAgenDropOff> arraylist_data = new ArrayList<>();
+            
+        try {
+            String select_data = "select * from agent where agent_name like '%" + et_cariagen.getText().toString() + "%'";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataAgenDropOff dt;
+            while (rs_data.next()) {
+                dt = new DataAgenDropOff(rs_data.getString("kode"), rs_data.getString("agent_name"), rs_data.getString("alamat"), rs_data.getString("kota_kode"));
+                arraylist_data.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        DefaultTableModel model_data = (DefaultTableModel)tableAgen.getModel();
+        model_data.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_data.size(); i++) {
+            row[0] = arraylist_data.get(i).getKode();
+            row[1] = arraylist_data.get(i).getNama_agen();
+            model_data.addRow(row);
+        }
+    }
+    
+    public void CariKota()
+    {
+        
+        ArrayList<DataKota> arraylist_kota = new ArrayList<>();
+            
+        try {
+            String select_data = "select * from kota where nama_kota like '%" + et_carikota.getText().toString() + "%'";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataKota dt;
+            while (rs_data.next()) {
+                dt = new DataKota(rs_data.getString("kode"), rs_data.getString("nama_kota"));
+                arraylist_kota.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Cari Kota Failed\n"+ex, "System", JOptionPane.DEFAULT_OPTION);
+        }
+        
+        DefaultTableModel model_kota = (DefaultTableModel)tableKota.getModel();
+        model_kota.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_kota.size(); i++) {
+            row[0] = arraylist_kota.get(i).getKode();
+            row[1] = arraylist_kota.get(i).getNama();
+            model_kota.addRow(row);
+        }
+        
+    }
+    
     public void getDataKota()
     {
         ArrayList<DataKota> arraylist_kota = new ArrayList<>();
@@ -1168,7 +2720,7 @@ public class Master extends javax.swing.JFrame {
             ResultSet rs_kota = mnSetting.stm.executeQuery(select_query);
             DataKota dtKota;
             while (rs_kota.next()) {
-                dtKota = new DataKota(rs_kota.getString("kode_kota"), rs_kota.getString("nama_kota"));
+                dtKota = new DataKota(rs_kota.getString("kode"), rs_kota.getString("nama_kota"));
                 arraylist_kota.add(dtKota);
             }
         } catch (SQLException ex) {
@@ -1186,28 +2738,106 @@ public class Master extends javax.swing.JFrame {
         
     }
     
+    
+    public void getcbKota() {
+        
+        ArrayList<DataKota> arraylist_data = new ArrayList<>();
+        cb_kodekotaagen.removeAllItems();
+        
+         try {
+            String select_data = "select *from kota";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataKota dt;
+            
+            while (rs_data.next()) {
+                dt = new DataKota(rs_data.getString("kode"), rs_data.getString("nama_kota"));
+                arraylist_data.add(dt);
+                cb_kodekotaagen.addItem(dt.getKode()+" - "+dt.getNama());
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+    }
+    
+    public void getDataAgen() 
+    {
+        ArrayList<DataAgenDropOff> arraylist_agen = new ArrayList<>();
+            
+        try {
+            String select_query = "select *from agent";
+            ResultSet rs = mnSetting.stm.executeQuery(select_query);
+            DataAgenDropOff dt;
+            while (rs.next()) {
+                dt = new DataAgenDropOff(rs.getString("kode"), rs.getString("agent_name"), rs.getString("alamat"), rs.getString("kota_kode"));
+                arraylist_agen.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        DefaultTableModel models = (DefaultTableModel)tableAgen.getModel();
+        models.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_agen.size(); i++) {
+            row[0] = arraylist_agen.get(i).getKode();
+            row[1] = arraylist_agen.get(i).getNama_agen();
+            models.addRow(row);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btHapusHapus;
     private javax.swing.JButton btHapusPelanggan;
+    private javax.swing.JButton btHapusagen;
+    private javax.swing.JButton btHapusemp;
+    private javax.swing.JButton btHapusestimasi;
     private javax.swing.JButton btSimpanPelanggan;
+    private javax.swing.JButton btSimpanagen;
+    private javax.swing.JButton btSimpanemp;
+    private javax.swing.JButton btSimpanestimasi;
     private javax.swing.JButton btSimpankota;
     private javax.swing.JButton btUbahPelanggan;
+    private javax.swing.JButton btUbahagen;
+    private javax.swing.JButton btUbahemp;
+    private javax.swing.JButton btUbahestimasi;
     private javax.swing.JButton btUbahkota;
+    private javax.swing.JButton btnClearagen;
+    private javax.swing.JButton btnClearemp;
+    private javax.swing.JButton btnClearestimasi;
     private javax.swing.JButton btnClearkota;
     private javax.swing.JButton btnClearpelanggan;
     private javax.swing.JButton btn_agen;
     private javax.swing.JButton btn_costestimate;
     private javax.swing.JButton btn_kota;
     private javax.swing.JButton btn_pelanggan;
+    private javax.swing.JButton btn_pelanggan1;
+    private javax.swing.JButton btn_pelanggan2;
+    private javax.swing.JComboBox<String> cb_idagen;
+    private javax.swing.JComboBox<String> cb_kodekotaagen;
+    private javax.swing.JComboBox<String> cb_kotakodeasal;
+    private javax.swing.JComboBox<String> cb_kotakodetujuan;
     private javax.swing.JTextArea et_alamat;
+    private javax.swing.JTextArea et_alamatagen;
+    private javax.swing.JTextField et_cariagen;
+    private javax.swing.JTextField et_cariemployee;
+    private javax.swing.JTextField et_cariestimasi;
     private javax.swing.JTextField et_carikota;
     private javax.swing.JTextField et_caripelanggan;
+    private javax.swing.JTextField et_hargaestimasi;
+    private javax.swing.JTextField et_kodeagen;
+    private javax.swing.JTextField et_kodeemployee;
+    private javax.swing.JTextField et_kodeestimasi;
     private javax.swing.JTextField et_kodekota;
     private javax.swing.JTextField et_kodepelanggan;
+    private javax.swing.JTextField et_namaagen;
+    private javax.swing.JTextField et_namaemployee;
     private javax.swing.JTextField et_namakota;
     private javax.swing.JTextField et_namapelanggan;
     private javax.swing.JTextField et_notelp;
+    private javax.swing.JTextField et_passwordemp;
+    private javax.swing.JTextField et_usernameemp;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1222,17 +2852,50 @@ public class Master extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JPanel panel_agent;
+    private javax.swing.JPanel panel_cost_estimate;
+    private javax.swing.JPanel panel_employee;
     private javax.swing.JPanel panel_kota;
+    private javax.swing.JPanel panel_menu;
     private javax.swing.JPanel panel_pelanggan;
     private javax.swing.JRadioButton rbLaki;
     private javax.swing.JRadioButton rbPerempuan;
+    private javax.swing.JRadioButton rbemp_Laki;
+    private javax.swing.JRadioButton rbemp_Perempuan;
+    private javax.swing.JTable tableAgen;
     private javax.swing.JTable tableKota;
     private javax.swing.JTable tablePelanggan;
+    private javax.swing.JTable tableemployee;
+    private javax.swing.JTable tableestimasi;
     // End of variables declaration//GEN-END:variables
 }
