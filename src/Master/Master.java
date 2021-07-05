@@ -25,6 +25,14 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import Settings.MainSystemSetting;
+import java.io.File;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -61,6 +69,51 @@ public class Master extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel_pelanggan = new javax.swing.JPanel();
+        et_kodepelanggan = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        rbLaki = new javax.swing.JRadioButton();
+        rbPerempuan = new javax.swing.JRadioButton();
+        jLabel14 = new javax.swing.JLabel();
+        et_notelp = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        et_alamat = new javax.swing.JTextArea();
+        et_caripelanggan = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablePelanggan = new javax.swing.JTable();
+        jLabel17 = new javax.swing.JLabel();
+        et_namapelanggan = new javax.swing.JTextField();
+        btSimpanPelanggan = new javax.swing.JButton();
+        btUbahPelanggan = new javax.swing.JButton();
+        btHapusPelanggan = new javax.swing.JButton();
+        btnClearpelanggan = new javax.swing.JButton();
+        panel_employee = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        et_cariemployee = new javax.swing.JTextField();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tableemployee = new javax.swing.JTable();
+        jLabel25 = new javax.swing.JLabel();
+        et_kodeemployee = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        et_namaemployee = new javax.swing.JTextField();
+        btnClearemp = new javax.swing.JButton();
+        btSimpanemp = new javax.swing.JButton();
+        btUbahemp = new javax.swing.JButton();
+        btHapusemp = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        et_usernameemp = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        et_passwordemp = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        rbemp_Laki = new javax.swing.JRadioButton();
+        rbemp_Perempuan = new javax.swing.JRadioButton();
+        jLabel31 = new javax.swing.JLabel();
+        cb_idagen = new javax.swing.JComboBox<>();
         panel_menu = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btn_pelanggan = new javax.swing.JButton();
@@ -69,8 +122,11 @@ public class Master extends javax.swing.JFrame {
         btn_agen = new javax.swing.JButton();
         btn_pelanggan1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        btn_pelanggan2 = new javax.swing.JButton();
+        btn_reports = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btn_reports1 = new javax.swing.JButton();
+        btn_rep_emplo = new javax.swing.JButton();
+        btn_report_cost = new javax.swing.JButton();
         panel_cost_estimate = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -103,29 +159,6 @@ public class Master extends javax.swing.JFrame {
         btSimpankota = new javax.swing.JButton();
         btUbahkota = new javax.swing.JButton();
         btHapusHapus = new javax.swing.JButton();
-        panel_employee = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        et_cariemployee = new javax.swing.JTextField();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        tableemployee = new javax.swing.JTable();
-        jLabel25 = new javax.swing.JLabel();
-        et_kodeemployee = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        et_namaemployee = new javax.swing.JTextField();
-        btnClearemp = new javax.swing.JButton();
-        btSimpanemp = new javax.swing.JButton();
-        btUbahemp = new javax.swing.JButton();
-        btHapusemp = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
-        et_usernameemp = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
-        et_passwordemp = new javax.swing.JTextField();
-        jLabel30 = new javax.swing.JLabel();
-        rbemp_Laki = new javax.swing.JRadioButton();
-        rbemp_Perempuan = new javax.swing.JRadioButton();
-        jLabel31 = new javax.swing.JLabel();
-        cb_idagen = new javax.swing.JComboBox<>();
         panel_agent = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
@@ -145,28 +178,6 @@ public class Master extends javax.swing.JFrame {
         et_alamatagen = new javax.swing.JTextArea();
         jLabel36 = new javax.swing.JLabel();
         cb_kodekotaagen = new javax.swing.JComboBox<>();
-        panel_pelanggan = new javax.swing.JPanel();
-        et_kodepelanggan = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        rbLaki = new javax.swing.JRadioButton();
-        rbPerempuan = new javax.swing.JRadioButton();
-        jLabel14 = new javax.swing.JLabel();
-        et_notelp = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        et_alamat = new javax.swing.JTextArea();
-        et_caripelanggan = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tablePelanggan = new javax.swing.JTable();
-        jLabel17 = new javax.swing.JLabel();
-        et_namapelanggan = new javax.swing.JTextField();
-        btSimpanPelanggan = new javax.swing.JButton();
-        btUbahPelanggan = new javax.swing.JButton();
-        btHapusPelanggan = new javax.swing.JButton();
-        btnClearpelanggan = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -178,6 +189,492 @@ public class Master extends javax.swing.JFrame {
         setResizable(false);
         setSize(new java.awt.Dimension(1090, 720));
         getContentPane().setLayout(null);
+
+        panel_pelanggan.setBackground(new java.awt.Color(255, 255, 255));
+        panel_pelanggan.setLayout(null);
+
+        et_kodepelanggan.setToolTipText("Nama");
+        et_kodepelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_kodepelangganActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(et_kodepelanggan);
+        et_kodepelanggan.setBounds(10, 60, 300, 20);
+
+        jLabel12.setText("Kode Customer");
+        panel_pelanggan.add(jLabel12);
+        jLabel12.setBounds(10, 40, 120, 20);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Customer");
+        panel_pelanggan.add(jLabel11);
+        jLabel11.setBounds(0, 0, 750, 30);
+
+        jLabel13.setText("Jenis Kelamin");
+        panel_pelanggan.add(jLabel13);
+        jLabel13.setBounds(10, 150, 90, 14);
+
+        rbLaki.setBackground(new java.awt.Color(255, 255, 255));
+        rbLaki.setText("Laki - laki");
+        rbLaki.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbLaki.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rbLakiStateChanged(evt);
+            }
+        });
+        rbLaki.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbLakiMouseClicked(evt);
+            }
+        });
+        rbLaki.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbLakiActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(rbLaki);
+        rbLaki.setBounds(10, 170, 100, 23);
+
+        rbPerempuan.setBackground(new java.awt.Color(255, 255, 255));
+        rbPerempuan.setText("Perempuan");
+        rbPerempuan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbPerempuan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbPerempuanMouseClicked(evt);
+            }
+        });
+        rbPerempuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbPerempuanActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(rbPerempuan);
+        rbPerempuan.setBounds(110, 170, 110, 23);
+
+        jLabel14.setText("No Handphone");
+        panel_pelanggan.add(jLabel14);
+        jLabel14.setBounds(10, 200, 100, 14);
+        panel_pelanggan.add(et_notelp);
+        et_notelp.setBounds(10, 220, 300, 20);
+
+        jLabel15.setText("Alamat");
+        panel_pelanggan.add(jLabel15);
+        jLabel15.setBounds(10, 250, 90, 14);
+
+        et_alamat.setColumns(20);
+        et_alamat.setRows(5);
+        jScrollPane2.setViewportView(et_alamat);
+
+        panel_pelanggan.add(jScrollPane2);
+        jScrollPane2.setBounds(10, 270, 300, 96);
+
+        et_caripelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_caripelangganActionPerformed(evt);
+            }
+        });
+        et_caripelanggan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                et_caripelangganKeyTyped(evt);
+            }
+        });
+        panel_pelanggan.add(et_caripelanggan);
+        et_caripelanggan.setBounds(320, 60, 420, 20);
+
+        jLabel16.setText("Cari Nama Customer");
+        panel_pelanggan.add(jLabel16);
+        jLabel16.setBounds(320, 40, 190, 14);
+
+        tablePelanggan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Kode", "Nama", "Jenis Kelamin", "No Handphone", "Alamat"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablePelanggan.getTableHeader().setReorderingAllowed(false);
+        tablePelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablePelangganMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tablePelanggan);
+        if (tablePelanggan.getColumnModel().getColumnCount() > 0) {
+            tablePelanggan.getColumnModel().getColumn(2).setHeaderValue("Jenis Kelamin");
+            tablePelanggan.getColumnModel().getColumn(3).setHeaderValue("No Handphone");
+            tablePelanggan.getColumnModel().getColumn(4).setHeaderValue("Alamat");
+        }
+
+        panel_pelanggan.add(jScrollPane4);
+        jScrollPane4.setBounds(320, 90, 420, 330);
+
+        jLabel17.setText("Nama Customer");
+        panel_pelanggan.add(jLabel17);
+        jLabel17.setBounds(10, 90, 120, 20);
+
+        et_namapelanggan.setToolTipText("Nama");
+        et_namapelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_namapelangganActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(et_namapelanggan);
+        et_namapelanggan.setBounds(10, 120, 300, 20);
+
+        btSimpanPelanggan.setText("Simpan");
+        btSimpanPelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btSimpanPelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSimpanPelangganMouseClicked(evt);
+            }
+        });
+        btSimpanPelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSimpanPelangganActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(btSimpanPelanggan);
+        btSimpanPelanggan.setBounds(10, 400, 90, 23);
+
+        btUbahPelanggan.setText("Ubah");
+        btUbahPelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btUbahPelanggan.setPreferredSize(new java.awt.Dimension(67, 23));
+        btUbahPelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btUbahPelangganMouseClicked(evt);
+            }
+        });
+        btUbahPelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUbahPelangganActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(btUbahPelanggan);
+        btUbahPelanggan.setBounds(120, 400, 90, 23);
+
+        btHapusPelanggan.setText("Hapus");
+        btHapusPelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btHapusPelanggan.setPreferredSize(new java.awt.Dimension(67, 23));
+        btHapusPelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHapusPelangganMouseClicked(evt);
+            }
+        });
+        btHapusPelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHapusPelangganActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(btHapusPelanggan);
+        btHapusPelanggan.setBounds(220, 400, 90, 23);
+
+        btnClearpelanggan.setText("Clear");
+        btnClearpelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClearpelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearpelangganMouseClicked(evt);
+            }
+        });
+        btnClearpelanggan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearpelangganActionPerformed(evt);
+            }
+        });
+        panel_pelanggan.add(btnClearpelanggan);
+        btnClearpelanggan.setBounds(10, 370, 300, 23);
+
+        getContentPane().add(panel_pelanggan);
+        panel_pelanggan.setBounds(140, 10, 750, 650);
+
+        panel_employee.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Employee");
+
+        jLabel24.setText("Cari Employee");
+
+        et_cariemployee.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                et_cariemployeeKeyTyped(evt);
+            }
+        });
+
+        tableemployee.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Kode", "Nama"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableemployee.getTableHeader().setReorderingAllowed(false);
+        tableemployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableemployeeMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(tableemployee);
+
+        jLabel25.setText("Kode Employee");
+
+        et_kodeemployee.setToolTipText("Nama");
+        et_kodeemployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_kodeemployeeActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Nama");
+
+        et_namaemployee.setToolTipText("Nama");
+        et_namaemployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_namaemployeeActionPerformed(evt);
+            }
+        });
+
+        btnClearemp.setText("Clear");
+        btnClearemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnClearemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnClearempMouseClicked(evt);
+            }
+        });
+        btnClearemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearempActionPerformed(evt);
+            }
+        });
+
+        btSimpanemp.setText("Simpan");
+        btSimpanemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btSimpanemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btSimpanempMouseClicked(evt);
+            }
+        });
+        btSimpanemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSimpanempActionPerformed(evt);
+            }
+        });
+
+        btUbahemp.setText("Ubah");
+        btUbahemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btUbahemp.setPreferredSize(new java.awt.Dimension(67, 23));
+        btUbahemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btUbahempMouseClicked(evt);
+            }
+        });
+        btUbahemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUbahempActionPerformed(evt);
+            }
+        });
+
+        btHapusemp.setText("Hapus");
+        btHapusemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btHapusemp.setPreferredSize(new java.awt.Dimension(67, 23));
+        btHapusemp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btHapusempMouseClicked(evt);
+            }
+        });
+        btHapusemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHapusempActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setText("Username");
+
+        et_usernameemp.setToolTipText("Nama");
+        et_usernameemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_usernameempActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Password");
+
+        et_passwordemp.setToolTipText("Nama");
+        et_passwordemp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        et_passwordemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                et_passwordempActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Jenis Kelamin");
+
+        rbemp_Laki.setBackground(new java.awt.Color(255, 255, 255));
+        rbemp_Laki.setText("Laki - laki");
+        rbemp_Laki.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbemp_Laki.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rbemp_LakiStateChanged(evt);
+            }
+        });
+        rbemp_Laki.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbemp_LakiMouseClicked(evt);
+            }
+        });
+        rbemp_Laki.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbemp_LakiActionPerformed(evt);
+            }
+        });
+
+        rbemp_Perempuan.setBackground(new java.awt.Color(255, 255, 255));
+        rbemp_Perempuan.setText("Perempuan");
+        rbemp_Perempuan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rbemp_Perempuan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbemp_PerempuanMouseClicked(evt);
+            }
+        });
+        rbemp_Perempuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbemp_PerempuanActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setText("Agen");
+
+        javax.swing.GroupLayout panel_employeeLayout = new javax.swing.GroupLayout(panel_employee);
+        panel_employee.setLayout(panel_employeeLayout);
+        panel_employeeLayout.setHorizontalGroup(
+            panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_employeeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(panel_employeeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panel_employeeLayout.createSequentialGroup()
+                                .addComponent(btSimpanemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btUbahemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btHapusemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnClearemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(et_passwordemp)
+                            .addComponent(et_usernameemp)
+                            .addComponent(et_namaemployee)
+                            .addComponent(et_kodeemployee)
+                            .addGroup(panel_employeeLayout.createSequentialGroup()
+                                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                                        .addComponent(rbemp_Laki, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, 0)
+                                        .addComponent(rbemp_Perempuan, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(cb_idagen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(et_cariemployee, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(144, 144, 144))
+        );
+        panel_employeeLayout.setVerticalGroup(
+            panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_employeeLayout.createSequentialGroup()
+                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addGap(6, 6, 6)
+                        .addComponent(et_cariemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_employeeLayout.createSequentialGroup()
+                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(et_kodeemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(et_namaemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel30)
+                        .addGap(6, 6, 6)
+                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbemp_Laki)
+                            .addComponent(rbemp_Perempuan))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(et_usernameemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(et_passwordemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cb_idagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnClearemp)
+                        .addGap(7, 7, 7)
+                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btSimpanemp)
+                            .addComponent(btUbahemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btHapusemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(223, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(panel_employee);
+        panel_employee.setBounds(140, 10, 750, 640);
 
         panel_menu.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -250,16 +747,16 @@ public class Master extends javax.swing.JFrame {
 
         jLabel3.setText("Laporan");
 
-        btn_pelanggan2.setText("Transaksi");
-        btn_pelanggan2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_pelanggan2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_reports.setText("Transaksi");
+        btn_reports.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_reports.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_pelanggan2MouseClicked(evt);
+                btn_reportsMouseClicked(evt);
             }
         });
-        btn_pelanggan2.addActionListener(new java.awt.event.ActionListener() {
+        btn_reports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_pelanggan2ActionPerformed(evt);
+                btn_reportsActionPerformed(evt);
             }
         });
 
@@ -267,6 +764,45 @@ public class Master extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        btn_reports1.setText("Customer");
+        btn_reports1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_reports1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_reports1MouseClicked(evt);
+            }
+        });
+        btn_reports1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reports1ActionPerformed(evt);
+            }
+        });
+
+        btn_rep_emplo.setText("Employee");
+        btn_rep_emplo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_rep_emplo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_rep_emploMouseClicked(evt);
+            }
+        });
+        btn_rep_emplo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rep_emploActionPerformed(evt);
+            }
+        });
+
+        btn_report_cost.setText("Estimasi");
+        btn_report_cost.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_report_cost.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_report_costMouseClicked(evt);
+            }
+        });
+        btn_report_cost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_report_costActionPerformed(evt);
             }
         });
 
@@ -289,10 +825,7 @@ public class Master extends javax.swing.JFrame {
                                 .addComponent(btn_agen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panel_menuLayout.createSequentialGroup()
                                 .addGap(41, 41, 41)
-                                .addComponent(jLabel3))
-                            .addGroup(panel_menuLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btn_pelanggan2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel3)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panel_menuLayout.createSequentialGroup()
                         .addContainerGap()
@@ -303,8 +836,20 @@ public class Master extends javax.swing.JFrame {
                                     .addComponent(btn_pelanggan, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btn_kota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btn_pelanggan1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(panel_menuLayout.createSequentialGroup()
+                                .addComponent(btn_rep_emplo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_menuLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_reports, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_reports1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap())
+            .addGroup(panel_menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_report_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_menuLayout.setVerticalGroup(
             panel_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,15 +868,21 @@ public class Master extends javax.swing.JFrame {
                 .addComponent(btn_pelanggan1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_pelanggan2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_rep_emplo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_reports1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_report_cost, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(6, 6, 6))
         );
 
         getContentPane().add(panel_menu);
-        panel_menu.setBounds(10, 10, 120, 640);
+        panel_menu.setBounds(10, 10, 120, 650);
 
         panel_cost_estimate.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -423,6 +974,11 @@ public class Master extends javax.swing.JFrame {
                 btUbahestimasiMouseClicked(evt);
             }
         });
+        btUbahestimasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUbahestimasiActionPerformed(evt);
+            }
+        });
 
         btHapusestimasi.setText("Hapus");
         btHapusestimasi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -445,11 +1001,11 @@ public class Master extends javax.swing.JFrame {
         javax.swing.GroupLayout panel_cost_estimateLayout = new javax.swing.GroupLayout(panel_cost_estimate);
         panel_cost_estimate.setLayout(panel_cost_estimateLayout);
         panel_cost_estimateLayout.setHorizontalGroup(
-            panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cost_estimateLayout.createSequentialGroup()
+            panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(panel_cost_estimateLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cost_estimateLayout.createSequentialGroup()
+            .addGroup(panel_cost_estimateLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panel_cost_estimateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -688,278 +1244,6 @@ public class Master extends javax.swing.JFrame {
         getContentPane().add(panel_kota);
         panel_kota.setBounds(140, 10, 750, 640);
 
-        panel_employee.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("Employee");
-
-        jLabel24.setText("Cari Employee");
-
-        et_cariemployee.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                et_cariemployeeKeyTyped(evt);
-            }
-        });
-
-        tableemployee.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Kode", "Nama"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tableemployee.getTableHeader().setReorderingAllowed(false);
-        tableemployee.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableemployeeMouseClicked(evt);
-            }
-        });
-        jScrollPane7.setViewportView(tableemployee);
-
-        jLabel25.setText("Kode Employee");
-
-        et_kodeemployee.setToolTipText("Nama");
-        et_kodeemployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                et_kodeemployeeActionPerformed(evt);
-            }
-        });
-
-        jLabel26.setText("Nama");
-
-        et_namaemployee.setToolTipText("Nama");
-        et_namaemployee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                et_namaemployeeActionPerformed(evt);
-            }
-        });
-
-        btnClearemp.setText("Clear");
-        btnClearemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClearemp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnClearempMouseClicked(evt);
-            }
-        });
-        btnClearemp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearempActionPerformed(evt);
-            }
-        });
-
-        btSimpanemp.setText("Simpan");
-        btSimpanemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btSimpanemp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btSimpanempMouseClicked(evt);
-            }
-        });
-        btSimpanemp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSimpanempActionPerformed(evt);
-            }
-        });
-
-        btUbahemp.setText("Ubah");
-        btUbahemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btUbahemp.setPreferredSize(new java.awt.Dimension(67, 23));
-        btUbahemp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btUbahempMouseClicked(evt);
-            }
-        });
-        btUbahemp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btUbahempActionPerformed(evt);
-            }
-        });
-
-        btHapusemp.setText("Hapus");
-        btHapusemp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btHapusemp.setPreferredSize(new java.awt.Dimension(67, 23));
-        btHapusemp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btHapusempMouseClicked(evt);
-            }
-        });
-        btHapusemp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btHapusempActionPerformed(evt);
-            }
-        });
-
-        jLabel28.setText("Username");
-
-        et_usernameemp.setToolTipText("Nama");
-        et_usernameemp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                et_usernameempActionPerformed(evt);
-            }
-        });
-
-        jLabel29.setText("Password");
-
-        et_passwordemp.setToolTipText("Nama");
-        et_passwordemp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        et_passwordemp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                et_passwordempActionPerformed(evt);
-            }
-        });
-
-        jLabel30.setText("Jenis Kelamin");
-
-        rbemp_Laki.setBackground(new java.awt.Color(255, 255, 255));
-        rbemp_Laki.setText("Laki - laki");
-        rbemp_Laki.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rbemp_Laki.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                rbemp_LakiStateChanged(evt);
-            }
-        });
-        rbemp_Laki.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbemp_LakiMouseClicked(evt);
-            }
-        });
-        rbemp_Laki.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbemp_LakiActionPerformed(evt);
-            }
-        });
-
-        rbemp_Perempuan.setBackground(new java.awt.Color(255, 255, 255));
-        rbemp_Perempuan.setText("Perempuan");
-        rbemp_Perempuan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rbemp_Perempuan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbemp_PerempuanMouseClicked(evt);
-            }
-        });
-        rbemp_Perempuan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbemp_PerempuanActionPerformed(evt);
-            }
-        });
-
-        jLabel31.setText("Agen");
-
-        javax.swing.GroupLayout panel_employeeLayout = new javax.swing.GroupLayout(panel_employee);
-        panel_employee.setLayout(panel_employeeLayout);
-        panel_employeeLayout.setHorizontalGroup(
-            panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_employeeLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(panel_employeeLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_employeeLayout.createSequentialGroup()
-                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_employeeLayout.createSequentialGroup()
-                                .addComponent(btSimpanemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btUbahemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btHapusemp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnClearemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(et_passwordemp)
-                            .addComponent(et_usernameemp)
-                            .addComponent(et_namaemployee)
-                            .addComponent(et_kodeemployee)
-                            .addGroup(panel_employeeLayout.createSequentialGroup()
-                                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(panel_employeeLayout.createSequentialGroup()
-                                        .addComponent(rbemp_Laki, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(rbemp_Perempuan, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18))
-                    .addGroup(panel_employeeLayout.createSequentialGroup()
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panel_employeeLayout.createSequentialGroup()
-                        .addComponent(cb_idagen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(et_cariemployee, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        panel_employeeLayout.setVerticalGroup(
-            panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_employeeLayout.createSequentialGroup()
-                .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(panel_employeeLayout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addGap(6, 6, 6)
-                        .addComponent(et_cariemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panel_employeeLayout.createSequentialGroup()
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(et_kodeemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(et_namaemployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel30)
-                        .addGap(6, 6, 6)
-                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rbemp_Laki)
-                            .addComponent(rbemp_Perempuan))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(et_usernameemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(et_passwordemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_idagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnClearemp)
-                        .addGap(7, 7, 7)
-                        .addGroup(panel_employeeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btSimpanemp)
-                            .addComponent(btUbahemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btHapusemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(224, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(panel_employee);
-        panel_employee.setBounds(140, 10, 750, 640);
-
         panel_agent.setBackground(new java.awt.Color(255, 255, 255));
         panel_agent.setLayout(null);
 
@@ -1127,215 +1411,6 @@ public class Master extends javax.swing.JFrame {
         getContentPane().add(panel_agent);
         panel_agent.setBounds(140, 10, 750, 640);
 
-        panel_pelanggan.setBackground(new java.awt.Color(255, 255, 255));
-        panel_pelanggan.setLayout(null);
-
-        et_kodepelanggan.setToolTipText("Nama");
-        et_kodepelanggan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                et_kodepelangganActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(et_kodepelanggan);
-        et_kodepelanggan.setBounds(10, 60, 300, 20);
-
-        jLabel12.setText("Kode Customer");
-        panel_pelanggan.add(jLabel12);
-        jLabel12.setBounds(10, 40, 120, 20);
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Customer");
-        panel_pelanggan.add(jLabel11);
-        jLabel11.setBounds(0, 0, 750, 30);
-
-        jLabel13.setText("Jenis Kelamin");
-        panel_pelanggan.add(jLabel13);
-        jLabel13.setBounds(10, 150, 90, 14);
-
-        rbLaki.setBackground(new java.awt.Color(255, 255, 255));
-        rbLaki.setText("Laki - laki");
-        rbLaki.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rbLaki.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                rbLakiStateChanged(evt);
-            }
-        });
-        rbLaki.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbLakiMouseClicked(evt);
-            }
-        });
-        rbLaki.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbLakiActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(rbLaki);
-        rbLaki.setBounds(10, 170, 100, 23);
-
-        rbPerempuan.setBackground(new java.awt.Color(255, 255, 255));
-        rbPerempuan.setText("Perempuan");
-        rbPerempuan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        rbPerempuan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbPerempuanMouseClicked(evt);
-            }
-        });
-        rbPerempuan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbPerempuanActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(rbPerempuan);
-        rbPerempuan.setBounds(110, 170, 110, 23);
-
-        jLabel14.setText("No Handphone");
-        panel_pelanggan.add(jLabel14);
-        jLabel14.setBounds(10, 200, 100, 14);
-        panel_pelanggan.add(et_notelp);
-        et_notelp.setBounds(10, 220, 300, 20);
-
-        jLabel15.setText("Alamat");
-        panel_pelanggan.add(jLabel15);
-        jLabel15.setBounds(10, 250, 90, 14);
-
-        et_alamat.setColumns(20);
-        et_alamat.setRows(5);
-        jScrollPane2.setViewportView(et_alamat);
-
-        panel_pelanggan.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 270, 300, 96);
-
-        et_caripelanggan.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                et_caripelangganKeyTyped(evt);
-            }
-        });
-        panel_pelanggan.add(et_caripelanggan);
-        et_caripelanggan.setBounds(320, 60, 420, 20);
-
-        jLabel16.setText("Cari Nama Customer");
-        panel_pelanggan.add(jLabel16);
-        jLabel16.setBounds(320, 40, 190, 14);
-
-        tablePelanggan.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Kode", "Nama", "Jenis Kelamin", "No Handphone", "Alamat"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablePelanggan.getTableHeader().setReorderingAllowed(false);
-        tablePelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablePelangganMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(tablePelanggan);
-        if (tablePelanggan.getColumnModel().getColumnCount() > 0) {
-            tablePelanggan.getColumnModel().getColumn(2).setHeaderValue("Jenis Kelamin");
-            tablePelanggan.getColumnModel().getColumn(3).setHeaderValue("No Handphone");
-            tablePelanggan.getColumnModel().getColumn(4).setHeaderValue("Alamat");
-        }
-
-        panel_pelanggan.add(jScrollPane4);
-        jScrollPane4.setBounds(320, 90, 420, 330);
-
-        jLabel17.setText("Nama Customer");
-        panel_pelanggan.add(jLabel17);
-        jLabel17.setBounds(10, 90, 120, 20);
-
-        et_namapelanggan.setToolTipText("Nama");
-        et_namapelanggan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                et_namapelangganActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(et_namapelanggan);
-        et_namapelanggan.setBounds(10, 120, 300, 20);
-
-        btSimpanPelanggan.setText("Simpan");
-        btSimpanPelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btSimpanPelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btSimpanPelangganMouseClicked(evt);
-            }
-        });
-        btSimpanPelanggan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSimpanPelangganActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(btSimpanPelanggan);
-        btSimpanPelanggan.setBounds(10, 400, 90, 23);
-
-        btUbahPelanggan.setText("Ubah");
-        btUbahPelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btUbahPelanggan.setPreferredSize(new java.awt.Dimension(67, 23));
-        btUbahPelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btUbahPelangganMouseClicked(evt);
-            }
-        });
-        btUbahPelanggan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btUbahPelangganActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(btUbahPelanggan);
-        btUbahPelanggan.setBounds(120, 400, 90, 23);
-
-        btHapusPelanggan.setText("Hapus");
-        btHapusPelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btHapusPelanggan.setPreferredSize(new java.awt.Dimension(67, 23));
-        btHapusPelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btHapusPelangganMouseClicked(evt);
-            }
-        });
-        btHapusPelanggan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btHapusPelangganActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(btHapusPelanggan);
-        btHapusPelanggan.setBounds(220, 400, 90, 23);
-
-        btnClearpelanggan.setText("Clear");
-        btnClearpelanggan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnClearpelanggan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnClearpelangganMouseClicked(evt);
-            }
-        });
-        btnClearpelanggan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearpelangganActionPerformed(evt);
-            }
-        });
-        panel_pelanggan.add(btnClearpelanggan);
-        btnClearpelanggan.setBounds(10, 370, 300, 23);
-
-        getContentPane().add(panel_pelanggan);
-        panel_pelanggan.setBounds(140, 10, 750, 640);
-
         jLabel18.setText("Kelas  : S6L");
         getContentPane().add(jLabel18);
         jLabel18.setBounds(900, 50, 150, 14);
@@ -1350,7 +1425,7 @@ public class Master extends javax.swing.JFrame {
         jScrollPane6.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane6);
-        jScrollPane6.setBounds(900, 70, 150, 580);
+        jScrollPane6.setBounds(900, 70, 150, 590);
 
         pack();
         setLocationRelativeTo(null);
@@ -1732,7 +1807,7 @@ public class Master extends javax.swing.JFrame {
         panel_agent.setVisible(false);
         panel_cost_estimate.setVisible(false);
         getConnection();
-        getDataKota();
+        getDataCustomer();
     }//GEN-LAST:event_btn_pelangganActionPerformed
 
     private void btn_kotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_kotaActionPerformed
@@ -1783,7 +1858,7 @@ public class Master extends javax.swing.JFrame {
                     
                 }else
                 {
-                    JOptionPane.showMessageDialog(null, "Kode "+et_kodepelanggan.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar kota dikanan untuk mendapatkan kode kota", "System", JOptionPane.DEFAULT_OPTION);
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodekota.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar kota dikanan untuk mendapatkan kode kota", "System", JOptionPane.DEFAULT_OPTION);
                 }
                 
             } catch (SQLException ex) {
@@ -2078,13 +2153,22 @@ public class Master extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btUbahempActionPerformed
 
-    private void btn_pelanggan2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pelanggan2MouseClicked
+    private void btn_reportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reportsMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pelanggan2MouseClicked
+    }//GEN-LAST:event_btn_reportsMouseClicked
 
-    private void btn_pelanggan2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pelanggan2ActionPerformed
+    private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pelanggan2ActionPerformed
+        try {
+            getConnection();
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/pendapatan.jasper"), null, mnSetting.con);
+            JasperViewer.viewReport(jp, false);
+        } catch(Exception e) {
+            System.out.println("Jaspger "+e.toString());
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+        
+    }//GEN-LAST:event_btn_reportsActionPerformed
 
     private void btn_agenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agenActionPerformed
         // TODO add your handling code here:
@@ -2256,7 +2340,7 @@ public class Master extends javax.swing.JFrame {
         panel_agent.setVisible(false);
         panel_cost_estimate.setVisible(true);
         getConnection();
-        getDataEmployee(); 
+        getDataCost(); 
         getKotaAsal();
         getKotaTujuan();
     }//GEN-LAST:event_btn_costestimateActionPerformed
@@ -2311,10 +2395,37 @@ public class Master extends javax.swing.JFrame {
 
     private void et_cariestimasiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_et_cariestimasiKeyTyped
         // TODO add your handling code here:
+        System.out.println("typed");
+        CariCostEstimate();
     }//GEN-LAST:event_et_cariestimasiKeyTyped
 
     private void tableestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableestimasiMouseClicked
         // TODO add your handling code here:
+        String kode = (String) tableestimasi.getValueAt(tableestimasi.getSelectedRow(), 0);
+        String fromcitycode = (String) tableestimasi.getValueAt(tableestimasi.getSelectedRow(), 1);
+        String tocitycode = (String) tableestimasi.getValueAt(tableestimasi.getSelectedRow(), 2);
+        String cost_perkg = (String) tableestimasi.getValueAt(tableestimasi.getSelectedRow(), 3);
+        
+        et_kodeestimasi.setText(kode);
+        
+        
+        for(int i=0;i < cb_kotakodeasal.getItemCount(); i++)
+        {
+            if(cb_kotakodeasal.getItemAt(i).toString().contains(fromcitycode))
+            {
+                cb_kotakodeasal.setSelectedIndex(i);
+            }
+        }
+        
+        for(int i=0;i < cb_kotakodetujuan.getItemCount(); i++)
+        {
+            if(cb_kotakodetujuan.getItemAt(i).toString().contains(tocitycode))
+            {
+                cb_kotakodetujuan.setSelectedIndex(i);
+            }
+        }
+        
+        et_hargaestimasi.setText(cost_perkg);
     }//GEN-LAST:event_tableestimasiMouseClicked
 
     private void et_kodeestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_kodeestimasiActionPerformed
@@ -2323,6 +2434,7 @@ public class Master extends javax.swing.JFrame {
 
     private void btnClearestimasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClearestimasiMouseClicked
         // TODO add your handling code here:
+        clearCostField();
     }//GEN-LAST:event_btnClearestimasiMouseClicked
 
     private void btnClearestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearestimasiActionPerformed
@@ -2363,8 +2475,8 @@ public class Master extends javax.swing.JFrame {
                     String tujuan = agentujuan[0];
                     String createQuery = "insert into cost_estimate (kode,from_city_kode,to_city_kode,cost_perkg) values ('"+et_kodeestimasi.getText().toString()+"','"+asal+"','"+tujuan+"',"+et_hargaestimasi.getText().toString()+")";
                     mnSetting.stm.executeUpdate(createQuery);
-//                    getDataKota();
-//                    clearKotaField();
+                    getDataCost();
+                    clearCostField();
                 }
                 
             } catch (SQLException ex) {
@@ -2385,11 +2497,155 @@ public class Master extends javax.swing.JFrame {
 
     private void btHapusestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHapusestimasiActionPerformed
         // TODO add your handling code here:
+        
+        if(et_kodeestimasi.getText().length() == 0 || et_hargaestimasi.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon pilih salah satu daftar harga dikanan untuk mendapatkan kode harga", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();            
+            try {
+                            
+                
+                String checkQuery = "SELECT count(*) from cost_estimate WHERE kode = '"+et_kodeestimasi.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkQuery);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    
+                    int dialogResult = JOptionPane.showConfirmDialog (null, "Apakah kamu yakin ingin menghapus kode "+et_kodeestimasi.getText().toString()+"?","Warning",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+                    if(dialogResult == JOptionPane.YES_OPTION){
+                       String deleteQuery = "delete from cost_estimate WHERE kode='"+et_kodeestimasi.getText().toString()+"'";
+                        mnSetting.stm.executeUpdate(deleteQuery);
+                        JOptionPane.showMessageDialog(null, "Kode "+et_kodeestimasi.getText().toString()+" berhasil dihapus", "System", JOptionPane.DEFAULT_OPTION);
+                        getDataKota();
+                        clearKotaField();
+                    }
+                    
+                }else
+                {
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeestimasi.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar harga dikanan untuk mendapatkan kode harga", "System", JOptionPane.DEFAULT_OPTION);
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error delete data\n"+ex);
+            }
+            
+        }
     }//GEN-LAST:event_btHapusestimasiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+            Login lgn = new Login();
+            lgn.setVisible(true); 
+            
+            this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btUbahestimasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUbahestimasiActionPerformed
+        // TODO add your handling code here:
+        
+        
+        if(et_kodeestimasi.getText().length() == 0 || et_hargaestimasi.getText().length() == 0)
+        {
+            JOptionPane.showMessageDialog(null, "Mohon pilih data estimasi di kanan", "System", JOptionPane.DEFAULT_OPTION);
+        }else
+        {
+            getConnection();
+            
+            
+            try {
+                
+                String checkquery = "SELECT count(*) from cost_estimate WHERE kode = '"+et_kodeestimasi.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkquery);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    String[] agenasal = cb_kotakodeasal.getSelectedItem().toString().split(" - ");
+                    String asal = agenasal[0];
+                    String[] agentujuan = cb_kotakodetujuan.getSelectedItem().toString().split(" - ");
+                    String tujuan = agentujuan[0];
+                    String updateQuery = "update cost_estimate SET from_city_kode='"+asal+"',to_city_kode='"+tujuan+"',cost_perkg='"+et_hargaestimasi.getText().toString()+"' where kode='"+et_kodeestimasi.getText().toString()+"'";
+                    mnSetting.stm.executeUpdate(updateQuery);
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeestimasi.getText().toString()+" berhasil diperbarui", "System", JOptionPane.DEFAULT_OPTION);
+                    getDataCost();
+                    clearCostField();
+                }else
+                {
+                    
+                    JOptionPane.showMessageDialog(null, "Kode "+et_kodeestimasi.getText().toString()+" tidak dikenal, Silahkan pilih salah satu daftar harga dikanan untuk mendapatkan kode harga", "System", JOptionPane.DEFAULT_OPTION);
+                
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error update data\n"+ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btUbahestimasiActionPerformed
+
+    private void et_caripelangganActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_caripelangganActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_et_caripelangganActionPerformed
+
+    private void btn_reports1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reports1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_reports1MouseClicked
+
+    private void btn_reports1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reports1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            getConnection();
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/customer.jasper"), null, mnSetting.con);
+            JasperViewer.viewReport(jp, false);
+        } catch(Exception e) {
+            System.out.println("Jaspger "+e.toString());
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_btn_reports1ActionPerformed
+
+    private void btn_rep_emploMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_rep_emploMouseClicked
+        // TODO add your handling code here:
+         try {
+            getConnection();
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/employee.jasper"), null, mnSetting.con);
+            JasperViewer.viewReport(jp, false);
+        } catch(Exception e) {
+            System.out.println("Jaspger "+e.toString());
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_btn_rep_emploMouseClicked
+
+    private void btn_rep_emploActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rep_emploActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_rep_emploActionPerformed
+
+    private void btn_report_costMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_report_costMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_report_costMouseClicked
+
+    private void btn_report_costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_report_costActionPerformed
+        // TODO add your handling code here:
+        try {
+            getConnection();
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/estimasi.jasper"), null, mnSetting.con);
+            JasperViewer.viewReport(jp, false);
+        } catch(Exception e) {
+            System.out.println("Jaspger "+e.toString());
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_btn_report_costActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2443,6 +2699,21 @@ public class Master extends javax.swing.JFrame {
             
             System.out.println("DB Still Connected");
         }
+    }
+    
+    public void donotshowPanel()
+    {
+        panel_employee.setVisible(false);
+        panel_pelanggan.setVisible(false);
+        panel_kota.setVisible(false);
+        panel_agent.setVisible(false);
+        panel_cost_estimate.setVisible(false);
+    }
+    
+    public void clearCostField()
+    {
+        et_kodeestimasi.setText("");
+        et_hargaestimasi.setText("");
     }
     
     public void clearEmployeeField()
@@ -2682,6 +2953,66 @@ public class Master extends javax.swing.JFrame {
         }
     }
     
+    public void CariCostEstimate()
+    {
+        
+        ArrayList<DataCost> arraylist_data = new ArrayList<>();
+            
+        try {
+            String select_data = "select * from cost_estimate where to_city_kode like '%" + et_cariestimasi.getText().toString() + "%'";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+            DataCost dt;
+            while (rs_data.next()) {
+                dt = new DataCost(rs_data.getString("kode"), rs_data.getString("from_city_kode"),rs_data.getString("to_city_kode"),rs_data.getString("cost_perkg"));
+                arraylist_data.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Cari Estimasi Failed\n"+ex, "System", JOptionPane.DEFAULT_OPTION);
+        }
+        
+        DefaultTableModel model_data = (DefaultTableModel)tableestimasi.getModel();
+        model_data.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_data.size(); i++) {
+            row[0] = arraylist_data.get(i).getKode();
+            row[1] = arraylist_data.get(i).getFromcitycode();
+            row[2] = arraylist_data.get(i).getTocitycode();
+            row[3] = arraylist_data.get(i).getCost_kg();
+            model_data.addRow(row);
+        }
+        
+    }
+    
+    public void getDataCost()
+    {
+        ArrayList<DataCost> arraylist_data = new ArrayList<>();
+            
+        try {
+            String select_query = "select *from cost_estimate";
+            ResultSet rs_data = mnSetting.stm.executeQuery(select_query);
+            DataCost dt;
+            while (rs_data.next()) {
+                dt = new DataCost(rs_data.getString("kode"), rs_data.getString("from_city_kode"),rs_data.getString("to_city_kode"),rs_data.getString("cost_perkg"));
+                arraylist_data.add(dt);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        
+        DefaultTableModel models = (DefaultTableModel)tableestimasi.getModel();
+        models.setRowCount(0);
+        Object[] row = new Object[5];
+        for (int i = 0; i<arraylist_data.size(); i++) {
+           row[0] = arraylist_data.get(i).getKode();
+            row[1] = arraylist_data.get(i).getFromcitycode();
+            row[2] = arraylist_data.get(i).getTocitycode();
+            row[3] = arraylist_data.get(i).getCost_kg();
+            models.addRow(row);
+        }
+        
+    }
+    
     public void CariKota()
     {
         
@@ -2812,7 +3143,10 @@ public class Master extends javax.swing.JFrame {
     private javax.swing.JButton btn_kota;
     private javax.swing.JButton btn_pelanggan;
     private javax.swing.JButton btn_pelanggan1;
-    private javax.swing.JButton btn_pelanggan2;
+    private javax.swing.JButton btn_rep_emplo;
+    private javax.swing.JButton btn_report_cost;
+    private javax.swing.JButton btn_reports;
+    private javax.swing.JButton btn_reports1;
     private javax.swing.JComboBox<String> cb_idagen;
     private javax.swing.JComboBox<String> cb_kodekotaagen;
     private javax.swing.JComboBox<String> cb_kotakodeasal;

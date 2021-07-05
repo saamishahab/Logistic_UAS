@@ -5,11 +5,19 @@
  */
 package Master;
 
+import Settings.MainSystemSetting;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author MS
  */
 public class Login extends javax.swing.JFrame {
+    
+    public MainSystemSetting mnSetting = new MainSystemSetting();
 
     /**
      * Creates new form Login
@@ -28,68 +36,143 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        et_username = new javax.swing.JTextField();
+        et_password = new javax.swing.JTextField();
+        btLogin = new javax.swing.JButton();
+        cb_admin = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 300));
         setSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(null);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Logistic");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 80, 400, 14);
+        jLabel1.setBounds(0, 24, 400, 70);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        et_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                et_usernameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(70, 130, 260, 20);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(70, 150, 260, 20);
+        getContentPane().add(et_username);
+        et_username.setBounds(70, 130, 260, 20);
+        getContentPane().add(et_password);
+        et_password.setBounds(70, 150, 260, 20);
 
-        jButton1.setText("Login");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btLogin.setText("Login");
+        btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btLoginMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(70, 200, 260, 23);
+        getContentPane().add(btLogin);
+        btLogin.setBounds(70, 200, 260, 23);
 
-        jCheckBox1.setText("Admin");
-        getContentPane().add(jCheckBox1);
-        jCheckBox1.setBounds(70, 170, 81, 23);
+        cb_admin.setText("Admin");
+        getContentPane().add(cb_admin);
+        cb_admin.setBounds(70, 170, 81, 23);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void et_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_et_usernameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btLoginActionPerformed
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-            Master plg = new Master();
-            plg.getDataCustomer();
-            plg.setVisible(true); 
+    private void btLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseClicked
             
-            this.dispose();
-    }//GEN-LAST:event_jButton1MouseClicked
+        
+        if(cb_admin.isSelected())
+        {
+            try {
+                
+                String checkdata = "SELECT count(*) from admin WHERE username = '"+et_username.getText().toString()+"' AND password = '"+et_password.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    Master plg = new Master();
+                    plg.donotshowPanel();
+                    plg.setVisible(true); 
+
+                    this.dispose();
+            
+                }else
+                {
+                    JOptionPane.showMessageDialog(null, "Username Admin dan Password salah, silahkan coba lagi", "System", JOptionPane.DEFAULT_OPTION);
+                
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error Login\n"+ex);
+            }
+        }
+        else
+        {
+            try {
+                
+                String checkdata = "SELECT count(*) from employee WHERE username = '"+et_username.getText().toString()+"' AND password = '"+et_password.getText().toString()+"'";
+                mnSetting.ps = mnSetting.con.prepareStatement(checkdata);
+                final ResultSet resultSet = mnSetting.ps.executeQuery();
+                int count = 0;
+                if(resultSet.next()) {
+                   count = resultSet.getInt(1);
+                }
+                if(count > 0)
+                {
+                    ArrayList<DataEmployee> arraylist_data = new ArrayList<>();
+                    
+                    String select_data = "select *from employee WHERE username = '"+et_username.getText().toString()+"' AND password = '"+et_password.getText().toString()+"'"; 
+                    ResultSet rs_data = mnSetting.stm.executeQuery(select_data);
+                    DataEmployee dt = null;
+//
+                    while (rs_data.next()) {
+                        dt = new DataEmployee(rs_data.getString("kode"), rs_data.getString("name"), rs_data.getString("gender"), rs_data.getString("username"), rs_data.getString("password"), rs_data.getString("kode_agent"));
+                        arraylist_data.add(dt);
+                    }
+//                    
+
+                    Transaction_Paket tp = new Transaction_Paket();
+                    tp.kode_emp = dt.getKode();
+                    tp.kode_agen_emp = dt.getId_dropoff_agent();
+                    tp.donotShowany();
+                    tp.setVisible(true); 
+//                    JOptionPane.showMessageDialog(null, tp.kode_kota, "System", JOptionPane.DEFAULT_OPTION);
+
+                    this.dispose();
+            
+                }else
+                {
+                    JOptionPane.showMessageDialog(null, "Username Employee dan Password salah, silahkan coba lagi", "System", JOptionPane.DEFAULT_OPTION);
+                
+                }
+                
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                System.out.println("Error Login\n"+ex);
+            }
+        }
+        
+        
+    }//GEN-LAST:event_btLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -127,10 +210,10 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JButton btLogin;
+    private javax.swing.JCheckBox cb_admin;
+    private javax.swing.JTextField et_password;
+    private javax.swing.JTextField et_username;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
