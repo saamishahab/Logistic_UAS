@@ -284,11 +284,12 @@
         <Component class="javax.swing.JComboBox" name="cb_track_status">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Dikirim Agen"/>
+              <StringArray count="5">
+                <StringItem index="0" value="Perjalanan"/>
                 <StringItem index="1" value="Diterima Agen"/>
-                <StringItem index="2" value="Pengiriman Selesai"/>
-                <StringItem index="3" value="Terkendala"/>
+                <StringItem index="2" value="Diambil Customer"/>
+                <StringItem index="3" value="Pengiriman Selesai"/>
+                <StringItem index="4" value="Terkendala"/>
               </StringArray>
             </Property>
           </Properties>

@@ -46,7 +46,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
         String harga = "0";
         try {
             
-            getConnection();
+                getConnection();
 
                 ArrayList<DataCost> arraylist_data = new ArrayList<>();
 
@@ -64,7 +64,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
                     System.out.println("harganya "+harga);
                 }
 
-            } catch (SQLException ex) {
+            } catch (Exception ex) {
                 ex.printStackTrace();
                 System.out.println("Error get data harga\n"+ex);
             }
@@ -389,7 +389,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
         panel_track.add(et_track_notrans);
         et_track_notrans.setBounds(10, 60, 290, 20);
 
-        cb_track_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dikirim Agen", "Diterima Agen", "Pengiriman Selesai", "Terkendala" }));
+        cb_track_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perjalanan", "Diterima Agen", "Diambil Customer", "Pengiriman Selesai", "Terkendala" }));
         panel_track.add(cb_track_status);
         cb_track_status.setBounds(10, 90, 290, 20);
 
@@ -1167,6 +1167,11 @@ public class Transaction_Paket extends javax.swing.JFrame {
 
     private void tabletrackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabletrackMouseClicked
         // TODO add your handling code here:
+        
+        String notrans = (String) tabletrack.getValueAt(tabletrack.getSelectedRow(), 0);
+        
+        et_track_notrans.setText(notrans);
+        
     }//GEN-LAST:event_tabletrackMouseClicked
 
     private void et_caritransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_et_caritransActionPerformed
