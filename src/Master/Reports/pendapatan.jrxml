@@ -69,35 +69,35 @@ FROM
 			<staticText>
 				<reportElement style="Column header" x="0" y="7" width="111" height="18" forecolor="#000000" uuid="1a2da50a-71cc-4e71-8c50-e292eeb42335"/>
 				<textElement>
-					<font isBold="true"/>
+					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Transaction No]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="111" y="7" width="111" height="18" forecolor="#000000" uuid="7eaea6eb-4578-4a79-87a8-66ab6dc5a1b0"/>
 				<textElement>
-					<font isBold="true"/>
+					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Harga]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="222" y="7" width="111" height="18" forecolor="#000000" uuid="dc9961c6-ee97-4a48-ab75-77a2b234e6ef"/>
 				<textElement>
-					<font isBold="true"/>
+					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nama Paket]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="333" y="7" width="111" height="18" forecolor="#000000" uuid="06ceeed9-2495-4ea6-b2d8-78f7b4815460"/>
 				<textElement>
-					<font isBold="true"/>
+					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Berat (Kg)]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" x="444" y="7" width="111" height="18" forecolor="#000000" uuid="8dab47d7-6326-4f08-b387-c571dfca8d8a"/>
 				<textElement>
-					<font isBold="true"/>
+					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Waktu]]></text>
 			</staticText>

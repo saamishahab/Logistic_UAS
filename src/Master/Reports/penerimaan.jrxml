@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="febd4201-4105-40eb-b698-87467b3bf381">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="notrans" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     paket_transaction.`id` AS paket_transaction_id,
+     paket_transaction.`transaction_no` AS paket_transaction_transaction_no,
+     paket_transaction.`cost_estimate_kode` AS paket_transaction_cost_estimate_kode,
+     paket_transaction.`cost` AS paket_transaction_cost,
+     paket_transaction.`sender_customer_kode` AS paket_transaction_sender_customer_kode,
+     paket_transaction.`receiver_customer_kode` AS paket_transaction_receiver_customer_kode,
+     paket_transaction.`alamat` AS paket_transaction_alamat,
+     paket_transaction.`nama_paket` AS paket_transaction_nama_paket,
+     paket_transaction.`berat` AS paket_transaction_berat,
+     paket_transaction.`create_date` AS paket_transaction_create_date,
+     paket_transaction.`create_by` AS paket_transaction_create_by
+FROM
+     `paket_transaction` paket_transaction
+WHERE
+     transaction_no = $P{notrans}]]>
+	</queryString>
+	<field name="paket_transaction_id" class="java.lang.Integer"/>
+	<field name="paket_transaction_transaction_no" class="java.lang.String"/>
+	<field name="paket_transaction_cost_estimate_kode" class="java.lang.String"/>
+	<field name="paket_transaction_cost" class="java.math.BigDecimal"/>
+	<field name="paket_transaction_sender_customer_kode" class="java.lang.String"/>
+	<field name="paket_transaction_receiver_customer_kode" class="java.lang.String"/>
+	<field name="paket_transaction_alamat" class="java.lang.String"/>
+	<field name="paket_transaction_nama_paket" class="java.lang.String"/>
+	<field name="paket_transaction_berat" class="java.math.BigDecimal"/>
+	<field name="paket_transaction_create_date" class="java.sql.Timestamp"/>
+	<field name="paket_transaction_create_by" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="223" y="21" width="109" height="37" uuid="8bbd92c1-f129-4c31-b6b8-abd322386614"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kwitansi]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="d4f83754-8458-4a80-a750-60653a68c832"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="213" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="20" y="124" width="173" height="65" uuid="4cc4aa47-1944-4b52-8af5-94d9c451805e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="34" width="100" height="20" uuid="d17d25cd-534e-4a33-9058-70e5ec83f250"/>
+				<text><![CDATA[Nomor Transaksi]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="34" width="100" height="20" uuid="0154c5f4-fcc3-4699-908a-356c2d15ca7c"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$F{paket_transaction_transaction_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="54" width="100" height="20" uuid="2dd7dc54-52d9-402a-8fa3-6b010b92a962"/>
+				<text><![CDATA[Nama Paket]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="54" width="100" height="20" uuid="ec38624f-52bc-4bc5-9d70-6608efbbc8e2"/>
+				<textFieldExpression><![CDATA[$F{paket_transaction_nama_paket}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="74" width="100" height="20" uuid="e72df56f-81b6-4aa1-924f-5bb4a6ed5c88"/>
+				<text><![CDATA[Berat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="74" width="60" height="20" uuid="91b279dd-b271-47f7-b539-4f7ecc55dc81"/>
+				<textFieldExpression><![CDATA[$F{paket_transaction_berat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="193" y="74" width="40" height="20" uuid="a54c57aa-f1f9-4a50-a660-8368aa5009ec"/>
+				<text><![CDATA[(Kg)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="189" width="46" height="20" uuid="4bf72e78-9056-4fe9-9b23-25d602f9cb11"/>
+				<text><![CDATA[Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="193" width="46" height="20" uuid="d1a26033-c02a-42ae-9442-bbbfec03914b"/>
+				<text><![CDATA[Penerima]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="368" y="124" width="173" height="65" uuid="cc3d405a-c5da-4178-af33-99e1288fcb59"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="87" y="104" width="46" height="20" uuid="8c0a989a-f3cb-4d75-916a-56322c9a2af6"/>
+				<text><![CDATA[Ttd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="104" width="46" height="20" uuid="2db2fca5-74f3-4aab-90c1-917807828ddd"/>
+				<text><![CDATA[Ttd]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

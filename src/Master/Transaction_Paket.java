@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -174,6 +176,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
         et_track_notes = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         btTrackSubmit1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         panel_transaksi = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -387,7 +390,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
             }
         });
         panel_track.add(et_track_notrans);
-        et_track_notrans.setBounds(10, 60, 290, 20);
+        et_track_notrans.setBounds(10, 60, 180, 20);
 
         cb_track_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Perjalanan", "Diterima Agen", "Diambil Customer", "Pengiriman Selesai", "Terkendala" }));
         panel_track.add(cb_track_status);
@@ -412,6 +415,15 @@ public class Transaction_Paket extends javax.swing.JFrame {
         });
         panel_track.add(btTrackSubmit1);
         btTrackSubmit1.setBounds(10, 260, 290, 23);
+
+        jButton2.setText("Stiker");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        panel_track.add(jButton2);
+        jButton2.setBounds(200, 60, 100, 23);
 
         getContentPane().add(panel_track);
         panel_track.setBounds(140, 10, 750, 640);
@@ -1315,6 +1327,23 @@ public class Transaction_Paket extends javax.swing.JFrame {
                 String createdata = "insert into paket_tracker (transaction_no, description,  status,  created_by) values ('"+et_track_notrans.getText().toString()+"','"+et_track_notes.getText().toString()+"','"+cb_track_status.getSelectedItem().toString()+"','"+kode_emp+"')";
                 mnSetting.stm.executeUpdate(createdata);
                 getTracking();
+                
+                
+                if(cb_track_status.getSelectedItem().toString().toLowerCase().equals("pengiriman selesai"))
+                {
+                    try {
+                        Map<String, Object> dbparam = new HashMap<>();
+                        dbparam.put("notrans", et_track_notrans.getText().toString());
+                        
+                        getConnection();
+                        JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/penerimaan.jasper"), dbparam, mnSetting.con);
+                        JasperViewer.viewReport(jp, false);
+                    } catch(Exception e) {
+                        System.out.println("Jaspger "+e.toString());
+                        JOptionPane.showMessageDialog(rootPane, e);
+                    }
+                }
+                
                 clearTrackField();
                 
 
@@ -1325,6 +1354,46 @@ public class Transaction_Paket extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_btTrackSubmit1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        if(et_track_notrans.getText().length() != 0)
+        {
+            
+            try {
+                getConnection();
+                String select = "select * from paket_transaction where transaction_no = '" + et_track_notrans.getText().toString() + "'";
+                ResultSet rs = mnSetting.stm.executeQuery(select);
+                if(rs.next())
+                {
+                    try {
+                        Map<String, Object> dbparam = new HashMap<>();
+                        dbparam.put("notrans", et_track_notrans.getText().toString());
+
+                        getConnection();
+                        JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/stiker.jasper"), dbparam, mnSetting.con);
+                        JasperViewer.viewReport(jp, false);
+                    } catch(Exception e) {
+                        System.out.println("Jaspger "+e.toString());
+                        JOptionPane.showMessageDialog(rootPane, e);
+                    }
+                } 
+                else {
+                    JOptionPane.showMessageDialog(null, "Kode tidak ditemukan", "System", JOptionPane.DEFAULT_OPTION);
+                }
+            }
+            catch (SQLException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Cari Transaksi Failed\n"+ex, "System", JOptionPane.DEFAULT_OPTION);
+            }
+            
+        }else
+        {
+            JOptionPane.showMessageDialog(null, "Masukkan kode transaksi", "System", JOptionPane.DEFAULT_OPTION);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     /**
@@ -1553,6 +1622,7 @@ public class Transaction_Paket extends javax.swing.JFrame {
     private javax.swing.JTextArea et_track_notes;
     private javax.swing.JTextField et_track_notrans;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

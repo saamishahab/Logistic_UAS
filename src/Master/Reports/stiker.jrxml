@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3a434e8e-3188-428d-bf45-4ba4b325e118">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="notrans" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     paket_transaction.`transaction_no` AS paket_transaction_transaction_no,
+     paket_transaction.`alamat` AS paket_transaction_alamat,
+     paket_transaction.`nama_paket` AS paket_transaction_nama_paket
+FROM
+     `paket_transaction` paket_transaction
+WHERE
+     transaction_no = $P{notrans}]]>
+	</queryString>
+	<field name="paket_transaction_transaction_no" class="java.lang.String"/>
+	<field name="paket_transaction_alamat" class="java.lang.String"/>
+	<field name="paket_transaction_nama_paket" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<componentElement>
+				<reportElement x="186" y="11" width="200" height="50" uuid="a798769b-843d-4114-a8e4-2dd6b73babbd"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{paket_transaction_transaction_no}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="144" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="20" width="555" height="20" uuid="e0867243-e396-4718-90bb-64c589afd94f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{paket_transaction_nama_paket}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="40" width="555" height="20" uuid="9839462f-7be0-4f2d-876d-f6e5e6c6ab24"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{paket_transaction_alamat}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="0" y="0" width="555" height="20" uuid="a2c81872-8076-49c2-8571-4b18130ea9be"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paket_transaction_transaction_no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
