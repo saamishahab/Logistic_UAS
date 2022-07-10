@@ -13,7 +13,10 @@
 			<style mode="Opaque" backcolor="#F0EFEF"/>
 		</conditionalStyle>
 	</style>
-	<queryString language="SQL">
+	<parameter name="tanggalcetak" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
 		<![CDATA[SELECT
      paket_transaction.`id` AS paket_transaction_id,
      paket_transaction.`transaction_no` AS paket_transaction_transaction_no,
@@ -40,25 +43,30 @@ FROM
 	<title>
 		<band height="132" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#000000" uuid="868fb806-022f-464c-a719-fda5c63abada"/>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#3399FF" uuid="868fb806-022f-464c-a719-fda5c63abada"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="36" width="451" height="35" uuid="f02c9a54-8275-4fc3-a54d-94079bced2f6"/>
+					<reportElement style="Title" x="21" y="36" width="430" height="35" uuid="f02c9a54-8275-4fc3-a54d-94079bced2f6"/>
 					<textElement>
 						<font size="24" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Laporan Transaksi]]></text>
+					<text><![CDATA[Transaksi]]></text>
 				</staticText>
+				<image>
+					<reportElement x="452" y="0" width="101" height="95" uuid="64819839-0671-41d3-a5ee-6663482bada7"/>
+					<imageExpression><![CDATA["C:\\Users\\Ami\\Downloads\\msi2.png"]]></imageExpression>
+				</image>
 			</frame>
-			<frame>
-				<reportElement mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CC0000" uuid="5c246d3d-1158-47fe-abae-ce65b0b696b6"/>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="0" y="10" width="144" height="22" forecolor="#FFFFFF" uuid="a9284c91-6b39-4a25-8b78-1f8acbf937c3"/>
-					<textElement textAlignment="Right">
-						<font size="12"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-			</frame>
+			<textField pattern="">
+				<reportElement x="100" y="112" width="143" height="20" uuid="5b52bfbe-189f-48ea-aa67-617c57c661ee"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalcetak}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="112" width="100" height="20" uuid="c0627ab3-4f87-4625-b8b0-078dd4285bab"/>
+				<text><![CDATA[Tanggal Cetak : ]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -146,19 +154,57 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
+		<band height="240" splitType="Stretch">
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="0c03066e-19a8-49b5-a228-05c5602ef0be"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
+			<staticText>
+				<reportElement x="375" y="71" width="100" height="20" uuid="81e99085-ed5e-40aa-b706-668fa825ac82"/>
+				<text><![CDATA[Mengertahui]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="148" width="100" height="20" uuid="0991caaa-7b37-4449-8441-4c83f0b9fb73"/>
+				<text><![CDATA[Leo Novianto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="168" width="143" height="20" uuid="c7bee9a4-3adf-4a8f-be4a-1a6e993e38a7"/>
+				<text><![CDATA[Chief Executive Officer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="71" width="100" height="20" uuid="988e7a79-d2fa-4db5-a4e7-53524b5c8ce5"/>
+				<text><![CDATA[Mengertahui]]></text>
+			</staticText>
+			<textField pattern="">
+				<reportElement x="375" y="51" width="143" height="20" uuid="55eb7fee-aa22-4ee6-b3f9-b1d8b2037ac2"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalcetak}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="21" y="51" width="143" height="20" uuid="9a636c9d-aa86-40c1-972a-3f0d07cf18fd"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tanggalcetak}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="21" y="168" width="143" height="20" uuid="478c23f5-ac87-4fc0-be68-66d3163eb4c2"/>
+				<text><![CDATA[Direktur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="148" width="100" height="20" uuid="ee503681-de52-41c6-8263-390123c64fca"/>
+				<text><![CDATA[Viktor Mantik]]></text>
+			</staticText>
 		</band>
 	</columnFooter>
 	<pageFooter>
 		<band height="25" splitType="Stretch">
 			<frame>
-				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="5e257847-a583-434b-b7f7-f1ff2b7c76c6"/>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#3399FF" uuid="5e257847-a583-434b-b7f7-f1ff2b7c76c6"/>
 				<textField evaluationTime="Report">
 					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="9f3bae4e-1f94-4379-9524-55706c49fefd"/>
 					<textElement verticalAlignment="Middle">
@@ -172,13 +218,6 @@ FROM
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-				</textField>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="d98f333c-4fac-43e3-8cdb-1574796b3ebb"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

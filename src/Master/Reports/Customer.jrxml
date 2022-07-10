@@ -42,6 +42,10 @@ FROM
 					</textElement>
 					<text><![CDATA[Membership Customer]]></text>
 				</staticText>
+				<image>
+					<reportElement x="462" y="12" width="64" height="53" uuid="91ee4cd8-a281-4cce-8d9d-653c77a53a9e"/>
+					<imageExpression><![CDATA["C:\\Users\\Ami\\Pictures\\gmail-logo.jpg"]]></imageExpression>
+				</image>
 			</frame>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="100" width="553" height="32" forecolor="#000000" backcolor="#CC0000" uuid="091a08b6-d0a5-4e40-b195-7677594a2eeb"/>
@@ -112,13 +116,17 @@ FROM
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
+		<band height="274" splitType="Stretch">
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7863e665-7278-4112-a5ec-c0405c5425bd"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
+			<staticText>
+				<reportElement x="413" y="115" width="100" height="20" uuid="35d9a374-3584-4cc9-b4f4-ddc3b77f3ac0"/>
+				<text><![CDATA[Mengertahui]]></text>
+			</staticText>
 		</band>
 	</columnFooter>
 	<pageFooter>

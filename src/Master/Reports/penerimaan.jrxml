@@ -113,6 +113,10 @@ WHERE
 				<reportElement x="434" y="104" width="46" height="20" uuid="2db2fca5-74f3-4aab-90c1-917807828ddd"/>
 				<text><![CDATA[Ttd]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="419" y="39" width="100" height="20" uuid="80c985b8-9a1a-49b3-a6a2-1df3e722ba55"/>
+				<textFieldExpression><![CDATA[$P{notrans}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>

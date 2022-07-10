@@ -26,6 +26,10 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import Settings.MainSystemSetting;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -2160,8 +2164,49 @@ public class Master extends javax.swing.JFrame {
     private void btn_reportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reportsActionPerformed
         // TODO add your handling code here:
         try {
+            Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_WEEK);
+            String hari = "";
+            switch (day) {
+                case 1:
+                    hari = "Minggu";
+                    break;
+                case 2:
+                    hari = "Senin";
+                    break;
+                case 3:
+                    hari = "Selasa";
+                    break;
+                case 4:
+                    hari = "Rabu";
+                    break;
+                case 5:
+                    hari = "Kamis";
+                    break;
+                case 6:
+                    hari = "Jum'at";
+                    break;
+                case 7:
+                    hari = "Sabtu";
+            }
+            
+            String bulan = new SimpleDateFormat("MM").format(Calendar.getInstance().getTime());
+            String[] monthNames = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+            String namabulan = monthNames[Integer.valueOf(bulan)];
+            System.out.println("Bulan "+namabulan);
+            
+            String tanggal = new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
+            String tahun = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
+            
+            String timeStamp = hari+", "+tanggal+" "+namabulan+" "+tahun;
+            
+            System.out.println(timeStamp);
+
+            Map<String, Object> dbparam = new HashMap<>();
+            dbparam.put("tanggalcetak", timeStamp);
+            
             getConnection();
-            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/pendapatan.jasper"), null, mnSetting.con);
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/pendapatan.jasper"), dbparam, mnSetting.con);
             JasperViewer.viewReport(jp, false);
         } catch(Exception e) {
             System.out.println("Jaspger "+e.toString());
@@ -2606,8 +2651,50 @@ public class Master extends javax.swing.JFrame {
     private void btn_reports1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reports1ActionPerformed
         // TODO add your handling code here:
         try {
+            
+            Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_WEEK);
+            String hari = "";
+            switch (day) {
+                case 1:
+                    hari = "Minggu";
+                    break;
+                case 2:
+                    hari = "Senin";
+                    break;
+                case 3:
+                    hari = "Selasa";
+                    break;
+                case 4:
+                    hari = "Rabu";
+                    break;
+                case 5:
+                    hari = "Kamis";
+                    break;
+                case 6:
+                    hari = "Jum'at";
+                    break;
+                case 7:
+                    hari = "Sabtu";
+            }
+            
+            String bulan = new SimpleDateFormat("MM").format(Calendar.getInstance().getTime());
+            String[] monthNames = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+            String namabulan = monthNames[Integer.valueOf(bulan)];
+            System.out.println("Bulan "+namabulan);
+            
+            String tanggal = new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
+            String tahun = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
+            
+            String timeStamp = hari+", "+tanggal+" "+namabulan+" "+tahun;
+            
+            System.out.println(timeStamp);
+
+            Map<String, Object> dbparam = new HashMap<>();
+            dbparam.put("tanggalcetak", timeStamp);
+                        
             getConnection();
-            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/customer.jasper"), null, mnSetting.con);
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/customer.jasper"), dbparam, mnSetting.con);
             JasperViewer.viewReport(jp, false);
         } catch(Exception e) {
             System.out.println("Jaspger "+e.toString());
@@ -2618,8 +2705,50 @@ public class Master extends javax.swing.JFrame {
     private void btn_rep_emploMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_rep_emploMouseClicked
         // TODO add your handling code here:
          try {
+             
+             Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_WEEK);
+            String hari = "";
+            switch (day) {
+                case 1:
+                    hari = "Minggu";
+                    break;
+                case 2:
+                    hari = "Senin";
+                    break;
+                case 3:
+                    hari = "Selasa";
+                    break;
+                case 4:
+                    hari = "Rabu";
+                    break;
+                case 5:
+                    hari = "Kamis";
+                    break;
+                case 6:
+                    hari = "Jum'at";
+                    break;
+                case 7:
+                    hari = "Sabtu";
+            }
+            
+            String bulan = new SimpleDateFormat("MM").format(Calendar.getInstance().getTime());
+            String[] monthNames = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+            String namabulan = monthNames[Integer.valueOf(bulan)];
+            System.out.println("Bulan "+namabulan);
+            
+            String tanggal = new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
+            String tahun = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
+            
+            String timeStamp = hari+", "+tanggal+" "+namabulan+" "+tahun;
+            
+            System.out.println(timeStamp);
+
+            Map<String, Object> dbparam = new HashMap<>();
+            dbparam.put("tanggalcetak", timeStamp);
+            
             getConnection();
-            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/employee.jasper"), null, mnSetting.con);
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/employee.jasper"), dbparam, mnSetting.con);
             JasperViewer.viewReport(jp, false);
         } catch(Exception e) {
             System.out.println("Jaspger "+e.toString());
@@ -2638,8 +2767,49 @@ public class Master extends javax.swing.JFrame {
     private void btn_report_costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_report_costActionPerformed
         // TODO add your handling code here:
         try {
+            Calendar cal = Calendar.getInstance();
+            int day = cal.get(Calendar.DAY_OF_WEEK);
+            String hari = "";
+            switch (day) {
+                case 1:
+                    hari = "Minggu";
+                    break;
+                case 2:
+                    hari = "Senin";
+                    break;
+                case 3:
+                    hari = "Selasa";
+                    break;
+                case 4:
+                    hari = "Rabu";
+                    break;
+                case 5:
+                    hari = "Kamis";
+                    break;
+                case 6:
+                    hari = "Jum'at";
+                    break;
+                case 7:
+                    hari = "Sabtu";
+            }
+            
+            String bulan = new SimpleDateFormat("MM").format(Calendar.getInstance().getTime());
+            String[] monthNames = {"Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+            String namabulan = monthNames[Integer.valueOf(bulan)];
+            System.out.println("Bulan "+namabulan);
+            
+            String tanggal = new SimpleDateFormat("dd").format(Calendar.getInstance().getTime());
+            String tahun = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
+            
+            String timeStamp = hari+", "+tanggal+" "+namabulan+" "+tahun;
+            
+            System.out.println(timeStamp);
+
+            Map<String, Object> dbparam = new HashMap<>();
+            dbparam.put("tanggalcetak", timeStamp);
+            
             getConnection();
-            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/estimasi.jasper"), null, mnSetting.con);
+            JasperPrint jp = JasperFillManager.fillReport(getClass().getResourceAsStream("Reports/estimasi.jasper"), dbparam, mnSetting.con);
             JasperViewer.viewReport(jp, false);
         } catch(Exception e) {
             System.out.println("Jaspger "+e.toString());
