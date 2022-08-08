@@ -45,7 +45,7 @@ FROM
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="555" height="95" backcolor="#3399FF" uuid="868fb806-022f-464c-a719-fda5c63abada"/>
 				<staticText>
-					<reportElement style="Title" x="21" y="36" width="430" height="35" uuid="f02c9a54-8275-4fc3-a54d-94079bced2f6"/>
+					<reportElement style="Title" x="0" y="36" width="451" height="35" uuid="f02c9a54-8275-4fc3-a54d-94079bced2f6"/>
 					<textElement>
 						<font size="24" isBold="false"/>
 					</textElement>
@@ -178,14 +178,7 @@ FROM
 				<text><![CDATA[Mengertahui]]></text>
 			</staticText>
 			<textField pattern="">
-				<reportElement x="375" y="51" width="143" height="20" uuid="55eb7fee-aa22-4ee6-b3f9-b1d8b2037ac2"/>
-				<textElement>
-					<font isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{tanggalcetak}]]></textFieldExpression>
-			</textField>
-			<textField pattern="">
-				<reportElement x="21" y="51" width="143" height="20" uuid="9a636c9d-aa86-40c1-972a-3f0d07cf18fd"/>
+				<reportElement x="414" y="51" width="143" height="20" uuid="55eb7fee-aa22-4ee6-b3f9-b1d8b2037ac2"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
@@ -198,6 +191,10 @@ FROM
 			<staticText>
 				<reportElement x="21" y="148" width="100" height="20" uuid="ee503681-de52-41c6-8263-390123c64fca"/>
 				<text><![CDATA[Viktor Mantik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="51" width="40" height="20" uuid="2776f623-8611-44ae-be1d-12366b1f2e2e"/>
+				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
 		</band>
 	</columnFooter>

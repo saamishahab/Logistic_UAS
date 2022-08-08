@@ -150,13 +150,6 @@ FROM
 				<reportElement x="42" y="115" width="100" height="20" uuid="8f6ba392-3531-431c-b5ad-4d2f5aa4e568"/>
 				<text><![CDATA[Mengertahui]]></text>
 			</staticText>
-			<textField pattern="">
-				<reportElement x="82" y="95" width="143" height="20" uuid="c64a5707-4381-45f1-b921-f4603040ed1d"/>
-				<textElement>
-					<font isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{tanggalcetak}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="42" y="212" width="143" height="20" uuid="cd3c02f1-61a9-41a3-9542-ceeb899215bd"/>
 				<text><![CDATA[Direktur]]></text>
@@ -167,10 +160,6 @@ FROM
 			</staticText>
 			<staticText>
 				<reportElement x="370" y="95" width="40" height="20" uuid="5ffc3a51-ad95-48e7-a7f6-0af949e86039"/>
-				<text><![CDATA[Jakarta, ]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="42" y="95" width="40" height="20" uuid="9bc4da8b-7408-4e09-8199-7b77b5292b13"/>
 				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
 		</band>

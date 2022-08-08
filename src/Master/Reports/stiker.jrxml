@@ -29,14 +29,7 @@ WHERE
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch">
-			<componentElement>
-				<reportElement x="186" y="11" width="200" height="50" uuid="a798769b-843d-4114-a8e4-2dd6b73babbd"/>
-				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code39 (Extended)" drawText="false" checksumRequired="false">
-					<jr:codeExpression><![CDATA[$F{paket_transaction_transaction_no}]]></jr:codeExpression>
-				</jr:barbecue>
-			</componentElement>
-		</band>
+		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
 		<band height="144" splitType="Stretch">

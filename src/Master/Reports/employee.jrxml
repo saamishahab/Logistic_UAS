@@ -45,7 +45,7 @@ FROM
 			<frame>
 				<reportElement mode="Opaque" x="0" y="14" width="555" height="81" backcolor="#3399FF" uuid="cc1c3e8b-a882-422b-85ed-9f0eade7e66a"/>
 				<staticText>
-					<reportElement style="Title" x="10" y="15" width="370" height="66" uuid="73a687cb-367a-42e4-8204-7d2e9ed36b9f"/>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="73a687cb-367a-42e4-8204-7d2e9ed36b9f"/>
 					<textElement>
 						<font size="36" isBold="false"/>
 					</textElement>
@@ -56,12 +56,8 @@ FROM
 					<imageExpression><![CDATA["C:\\Users\\Ami\\Downloads\\msi2.png"]]></imageExpression>
 				</image>
 			</frame>
-			<staticText>
-				<reportElement x="0" y="112" width="100" height="20" uuid="5ee8c6c3-fb8a-46c9-b1c0-a02903a28439"/>
-				<text><![CDATA[Tanggal Cetak : ]]></text>
-			</staticText>
 			<textField pattern="">
-				<reportElement x="100" y="112" width="143" height="20" uuid="6b27a8bc-7713-434d-8548-d1384c7da621"/>
+				<reportElement x="2" y="112" width="143" height="20" uuid="f7dd957f-2080-4ae4-9928-31a75e7c6263"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
@@ -156,7 +152,7 @@ FROM
 				<text><![CDATA[Mengertahui]]></text>
 			</staticText>
 			<textField pattern="">
-				<reportElement x="380" y="105" width="143" height="20" uuid="de69bb52-9017-464c-8db9-5bfd65bbe9da"/>
+				<reportElement x="420" y="105" width="143" height="20" uuid="de69bb52-9017-464c-8db9-5bfd65bbe9da"/>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
@@ -170,13 +166,6 @@ FROM
 				<reportElement x="380" y="222" width="143" height="20" uuid="09fffee2-ff49-4570-a87d-cb408282011f"/>
 				<text><![CDATA[Chief Executive Officer]]></text>
 			</staticText>
-			<textField pattern="">
-				<reportElement x="26" y="105" width="143" height="20" uuid="7ad94e29-cf68-4001-b5f5-eae13b9570a0"/>
-				<textElement>
-					<font isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{tanggalcetak}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="26" y="125" width="100" height="20" uuid="77a4428e-acc5-47ed-b46a-2192f6d6e612"/>
 				<text><![CDATA[Mengertahui]]></text>
@@ -184,6 +173,10 @@ FROM
 			<staticText>
 				<reportElement x="26" y="202" width="100" height="20" uuid="116151ce-48fb-4f1e-8dce-196ba64a4fd5"/>
 				<text><![CDATA[Viktor Mantik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="105" width="40" height="20" uuid="2945025a-12c0-4380-83ff-f135b7c3da7b"/>
+				<text><![CDATA[Jakarta, ]]></text>
 			</staticText>
 		</band>
 	</columnFooter>
