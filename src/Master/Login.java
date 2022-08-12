@@ -40,17 +40,18 @@ public class Login extends javax.swing.JFrame {
         et_password = new javax.swing.JTextField();
         btLogin = new javax.swing.JButton();
         cb_admin = new javax.swing.JCheckBox();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(400, 300));
-        setSize(new java.awt.Dimension(400, 300));
+        setMinimumSize(new java.awt.Dimension(410, 520));
+        setSize(new java.awt.Dimension(410, 520));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Logistic");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 24, 400, 70);
+        jLabel1.setBounds(0, 180, 400, 70);
 
         et_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,9 +59,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(et_username);
-        et_username.setBounds(70, 130, 260, 20);
+        et_username.setBounds(70, 280, 260, 20);
         getContentPane().add(et_password);
-        et_password.setBounds(70, 150, 260, 20);
+        et_password.setBounds(70, 300, 260, 20);
 
         btLogin.setText("Login");
         btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -74,11 +75,15 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btLogin);
-        btLogin.setBounds(70, 200, 260, 23);
+        btLogin.setBounds(70, 350, 260, 23);
 
         cb_admin.setText("Admin");
         getContentPane().add(cb_admin);
-        cb_admin.setBounds(70, 170, 81, 23);
+        cb_admin.setBounds(70, 320, 81, 23);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Ami\\Downloads\\msi2 (1).png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(80, 30, 240, 140);
 
         pack();
         setLocationRelativeTo(null);
@@ -215,5 +220,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField et_password;
     private javax.swing.JTextField et_username;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
